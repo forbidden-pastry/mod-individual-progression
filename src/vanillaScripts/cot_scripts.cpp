@@ -1,4 +1,3 @@
-#include "IndividualProgression.h"
 #include "ScriptMgr.h"
 #include "Player.h"
 #include "GameObjectAI.h"
@@ -22,12 +21,15 @@ public:
 
         bool CanBeSeen(Player const* player) override
         {
-            if (player->IsGameMaster())
-            {
-                return true;
-            }
-            Player* target = ObjectAccessor::FindConnectedPlayer(player->GetGUID());
-            return sIndividualProgression->isBeforeProgression(target, PROGRESSION_NAXX40);
+            // turned off for now, straight up
+            return false;
+
+            // if (player->IsGameMaster())
+            // {
+            //     return true;
+            // }
+            // Player* target = ObjectAccessor::FindConnectedPlayer(player->GetGUID());
+            // return sIndividualProgression->isBeforeProgression(target, PROGRESSION_NAXX40);
         }
 
     };

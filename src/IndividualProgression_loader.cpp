@@ -3,7 +3,6 @@
  */
 
 // From SC
-void AddSC_mod_individual_progression();
 void AddSC_boss_onyxia_40();
 void AddSC_instance_onyxias_lair_40();
 void AddSC_instance_blackrock_spire_50_59_B();
@@ -38,9 +37,6 @@ void AddSC_aq_scripts();
 void AddSC_cot_scripts();
 void AddSC_misc_scripts();
 void AddSC_ipp_spell_scripts();
-void AddSC_individualProgression_commandscript();
-void AddSC_mod_individual_progression_awareness();
-void AddSC_mod_individual_progression_player();
 void AddSC_npc_archmage_timear();
 void AddSC_karazhan_70();
 void AddSC_the_eye_70();
@@ -48,7 +44,6 @@ void AddSC_serpentshrine_cavern_70();
 
 void Addmod_individual_progressionScripts()
 {
-    AddSC_mod_individual_progression();
     AddSC_boss_onyxia_40();
     AddSC_instance_onyxias_lair_40();
     AddSC_instance_blackrock_spire_50_59_B();
@@ -83,9 +78,6 @@ void Addmod_individual_progressionScripts()
     AddSC_cot_scripts();
     AddSC_misc_scripts();
     AddSC_ipp_spell_scripts();
-    AddSC_individualProgression_commandscript();
-    AddSC_mod_individual_progression_awareness();
-    AddSC_mod_individual_progression_player();
     AddSC_npc_archmage_timear();
     AddSC_karazhan_70();
     AddSC_the_eye_70();

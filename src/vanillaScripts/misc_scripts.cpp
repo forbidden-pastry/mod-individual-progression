@@ -17,10 +17,6 @@ public:
 
         bool CanBeSeen(Player const* player) override
         {
-            if (player->IsGameMaster())
-            {
-                return true;
-            }
             return player->HasItemCount(17191, 1, false);  // Require Sceptre of Celebras
         }
 

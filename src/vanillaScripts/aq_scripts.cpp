@@ -13,6 +13,7 @@ enum
     GO_GLYPH_OF_AHN_QIRAJ = 176148,
     GO_ROOTS_OF_AHN_QIRAJ = 176147,
     GO_AQ_GHOST_GATE = 180322,
+    GO_AQ_GONG = 180717
 
     GLOBAL_TEXT_CHAMPION = 41100,
 
@@ -22,7 +23,9 @@ enum
 
     STAGE_OPEN_GATES = 0,
     STAGE_WAR = 1,
-    STAGE_RESET = 2
+    STAGE_DONE = 2,
+    STAGE_RESET = 3
+
 };
 
 class gobject_scarab_gong : public GameObjectScript
@@ -56,7 +59,7 @@ public:
 
         void UpdateAI(uint32 diff) override
         {
-            if (eventTimer)
+            if (eventTimer && eventStage != STAGE_DONE)
             {
                 if (eventTimer <= diff)
                 {
@@ -67,6 +70,8 @@ public:
                         break;
                     case STAGE_WAR:
                         HandleWarStage();
+                        break;
+                    case STAGE_DONE:
                         break;
                     case STAGE_RESET:
                         ResetAQGates();
@@ -85,8 +90,8 @@ public:
             {
                 return false; 
             }
-
-            return sIndividualProgression->isBeforeProgression(target, PROGRESSION_AQ);
+            // Gong should always be visible?
+            return true;
         }
 
         void NextStage(uint32 timeUntil = 100)
@@ -212,15 +217,18 @@ public:
         explicit aq_gateAI(GameObject* go) : GameObjectAI(go) {}
 
         bool CanBeSeen(Player const* player) override
-        {
-
+        {   
             Player* target = ObjectAccessor::FindConnectedPlayer(player->GetGUID());
             if (!target)
             {
                 return false; 
             }
 
-            return sIndividualProgression->isBeforeProgression(target, PROGRESSION_AQ);
+            if (me->GetGoState() == GO_STATE_ACTIVE)
+            {
+                return false;
+            }
+            return true;
         }
     };
 

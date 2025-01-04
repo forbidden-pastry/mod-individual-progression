@@ -38,13 +38,6 @@ DELETE FROM npc_trainer WHERE SpellID IN (18261, 19886, 54257, 54256);
 UPDATE quest_template SET RewardItem1=16073, RewardAmount1=1 WHERE id = 6610;
 UPDATE item_template SET spellid_1 = 19887 WHERE entry = 16073;
 
--- Make Spice Bread learnable for completion's sake, but only after reaching a level when it will no longer allow skipping early cooking
-UPDATE npc_trainer SET ReqSkillRank = 200 WHERE SpellID = 37836;
-
--- Fishing needs to be learned from Quests and Books, remove from trainers
-DELETE FROM npc_trainer WHERE SpellID IN (18249, 54083, 54084);
-UPDATE quest_template SET RewardItem2 = 16082, RewardAmount2 = 1 WHERE ID = 6607;
-
 -- Leatherworking Recipes
 DELETE
 FROM npc_trainer

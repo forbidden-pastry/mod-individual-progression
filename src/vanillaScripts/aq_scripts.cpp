@@ -166,8 +166,8 @@ public:
             if (go_aq_barrier->GetGoState() == GO_STATE_ACTIVE)
                 return;
 
-            if (announce)
-                sWorld->SendZoneText(GLOBAL_TEXT_CHAMPION, player->GetName().c_str());
+            // if (announce)
+            //     sWorld->SendZoneText(GLOBAL_TEXT_CHAMPION, player->GetName().c_str());
 
             eventTimer += 1000;
             eventStage = STAGE_OPEN_GATES;

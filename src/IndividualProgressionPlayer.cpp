@@ -1,5 +1,9 @@
 #include "IndividualProgression.h"
 
+// /home/gabe/azerothcore/modules/mod-individual-progression/src/IndividualProgressionPlayer.cpp:19:34: fatal error: only virtual member functions can be marked 'override'
+//    19 |     void OnLogin(Player* player) override
+//       |                
+
 class IndividualPlayerProgression : public PlayerScript
 {
 
@@ -16,7 +20,7 @@ private:
 public:
     IndividualPlayerProgression() : PlayerScript("IndividualProgression") { }
 
-    void OnLogin(Player* player) override
+    void OnLogin(Player* player)
     {
         if (player->getClass() == CLASS_DEATH_KNIGHT && sIndividualProgression->deathKnightStartingProgression && !sIndividualProgression->hasPassedProgression(player, static_cast<ProgressionState>(sIndividualProgression->deathKnightStartingProgression)))
         {
@@ -29,7 +33,7 @@ public:
         sIndividualProgression->CheckAdjustments(player);
     }
 
-    void OnSetMaxLevel(Player* player, uint32& maxPlayerLevel) override
+    void OnSetMaxLevel(Player* player, uint32& maxPlayerLevel)
     {
         if (!sIndividualProgression->enabled || isExcludedFromProgression(player))
         {
@@ -52,27 +56,27 @@ public:
         }
     }
 
-    void OnMapChanged(Player* player) override
+    void OnMapChanged(Player* player)
     {
         sIndividualProgression->CheckAdjustments(player);
     }
 
-    void OnLevelChanged(Player* player, uint8 /*oldLevel*/) override
+    void OnLevelChanged(Player* player, uint8 /*oldLevel*/)
     {
         sIndividualProgression->CheckAdjustments(player);
     }
 
-    void OnEquip(Player* player, Item* /*it*/, uint8 /*bag*/, uint8 /*slot*/, bool /*update*/) override
+    void OnEquip(Player* player, Item* /*it*/, uint8 /*bag*/, uint8 /*slot*/, bool /*update*/)
     {
         sIndividualProgression->CheckAdjustments(player);
     }
 
-    void OnPlayerResurrect(Player* player, float /*restore_percent*/, bool /*applySickness*/) override
+    void OnPlayerResurrect(Player* player, float /*restore_percent*/, bool /*applySickness*/)
     {
         sIndividualProgression->CheckAdjustments(player);
     }
 
-    bool ShouldBeRewardedWithMoneyInsteadOfExp(Player* player) override
+    bool ShouldBeRewardedWithMoneyInsteadOfExp(Player* player)
     {
         if (!sIndividualProgression->questMoneyAtLevelCap)
         {
@@ -84,7 +88,7 @@ public:
                 (!sIndividualProgression->hasPassedProgression(player, PROGRESSION_TBC_TIER_5) && player->GetLevel() == 70));
     }
 
-    void OnAfterUpdateMaxHealth(Player* player, float& value) override
+    void OnAfterUpdateMaxHealth(Player* player, float& value)
     {
         // TODO: This should be adjust to use an aura like damage adjustment. This is more robust to update when changing equipment, etc.
         if (!sIndividualProgression->enabled || isExcludedFromProgression(player))
@@ -117,7 +121,7 @@ public:
         }
     }
 
-    void OnQuestComputeXP(Player* player, Quest const* quest, uint32& xpValue) override
+    void OnQuestComputeXP(Player* player, Quest const* quest, uint32& xpValue)
     {
         if (!sIndividualProgression->enabled || !sIndividualProgression->questXpFix || isExcludedFromProgression(player))
         {
@@ -134,7 +138,7 @@ public:
         }
     }
 
-    void OnGiveXP(Player* player, uint32& amount, Unit* /*victim*/, uint8 xpSource) override
+    void OnGiveXP(Player* player, uint32& amount, Unit* /*victim*/, uint8 xpSource)
     {
         if (!sIndividualProgression->enabled || isExcludedFromProgression(player))
         {
@@ -171,7 +175,7 @@ public:
         return (accountNameFound && std::regex_match(accountName, excludedAccountsRegex));
     }
 
-    bool OnBeforeTeleport(Player* player, uint32 mapid, float x, float y, float z, float /*orientation*/, uint32 /*options*/, Unit* /*target*/) override
+    bool OnBeforeTeleport(Player* player, uint32 mapid, float x, float y, float z, float /*orientation*/, uint32 /*options*/, Unit* /*target*/)
     {
         if (!sIndividualProgression->enabled || player->IsGameMaster() || isExcludedFromProgression(player))
         {
@@ -247,7 +251,7 @@ public:
         return true;
     }
 
-    void OnPlayerCompleteQuest(Player* player, Quest const* quest) override
+    void OnPlayerCompleteQuest(Player* player, Quest const* quest)
     {
         if (!sIndividualProgression->enabled || isExcludedFromProgression(player))
         {
@@ -274,7 +278,7 @@ public:
         }
     }
 
-    bool CanGroupInvite(Player* player, std::string& membername) override
+    bool CanGroupInvite(Player* player, std::string& membername)
     {
         if (!sIndividualProgression->enabled || !sIndividualProgression->enforceGroupRules || isExcludedFromProgression(player))
         {
@@ -286,7 +290,7 @@ public:
         return (currentState == otherPlayerState);
     }
 
-    bool CanGroupAccept(Player* player, Group* group) override
+    bool CanGroupAccept(Player* player, Group* group)
     {
         if (!sIndividualProgression->enabled || !sIndividualProgression->enforceGroupRules || isExcludedFromProgression(player))
         {
@@ -300,7 +304,7 @@ public:
 
 
 
-    void OnCreatureKill(Player* killer, Creature* killed) override
+    void OnCreatureKill(Player* killer, Creature* killed)
     {
         sIndividualProgression->checkKillProgression(killer, killed);
         Group* group = killer->GetGroup();
@@ -319,7 +323,7 @@ public:
         }
     }
 
-    bool OnUpdateFishingSkill(Player* player, int32 /*skill*/, int32 /*zone_skill*/, int32 chance, int32 roll) override
+    bool OnUpdateFishingSkill(Player* player, int32 /*skill*/, int32 /*zone_skill*/, int32 chance, int32 roll)
     {
         if (!sIndividualProgression->enabled || !sIndividualProgression->fishingFix || isExcludedFromProgression(player))
             return true;
@@ -328,7 +332,7 @@ public:
         return true;
     }
 
-    void OnUpdateArea(Player* player, uint32 /*oldArea*/, uint32 newArea) override
+    void OnUpdateArea(Player* player, uint32 /*oldArea*/, uint32 newArea)
     {
         switch (newArea) {
             case AREA_LIGHTS_HOPE:
@@ -358,7 +362,7 @@ public:
         }
     }
 
-    void OnQueueRandomDungeon(Player* player, uint32& rDungeonId) override
+    void OnQueueRandomDungeon(Player* player, uint32& rDungeonId)
 {
     // List of exceptions for seasonal event dungeons
     std::set<uint32> seasonalEventDungeons = { 285, 286, 287, 288 };
@@ -389,7 +393,7 @@ public:
     }
 }
 
-    bool CanEquipItem(Player* player, uint8 /*slot*/, uint16& /*dest*/, Item* pItem, bool /*swap*/, bool /*not_loading*/) override
+    bool CanEquipItem(Player* player, uint8 /*slot*/, uint16& /*dest*/, Item* pItem, bool /*swap*/, bool /*not_loading*/)
     {
         if (sIndividualProgression->pvpGearRequirements)
         {
@@ -465,7 +469,7 @@ public:
     IndividualPlayerProgression_AccountScript() : AccountScript("IndividualProgression_AccountScript")
     {}
 
-    bool CanAccountCreateCharacter(uint32 accountId, uint8 charRace, uint8 charClass) override
+    bool CanAccountCreateCharacter(uint32 accountId, uint8 charRace, uint8 charClass)
     {
         if ((!sIndividualProgression->enabled) ||
             (charRace != RACE_DRAENEI && charRace != RACE_BLOODELF && charClass != CLASS_DEATH_KNIGHT) ||
@@ -556,7 +560,7 @@ private:
 public:
     IndividualPlayerProgression_PetScript() : PetScript("IndividualProgression_PetScript") { }
 
-    void OnPetAddToWorld(Pet* pet) override
+    void OnPetAddToWorld(Pet* pet)
     {
         CheckAdjustments(pet);
     }
@@ -579,7 +583,7 @@ private:
 public:
     IndividualPlayerProgression_UnitScript() : UnitScript("IndividualPlayerProgression_UnitScript") { }
 
-    void ModifyHealReceived(Unit* /*target*/, Unit *healer, uint32 &heal, SpellInfo const *spellInfo) override
+    void ModifyHealReceived(Unit* /*target*/, Unit *healer, uint32 &heal, SpellInfo const *spellInfo)
     {
         // Skip potions, bandages, percentage based heals like Rune Tap, etc.
         if (!sIndividualProgression->enabled || spellInfo->HasAttribute(SPELL_ATTR0_NO_IMMUNITIES) || spellInfo->Mechanic == MECHANIC_BANDAGE)
@@ -624,7 +628,7 @@ public:
         }
     }
 
-    void ModifySpellDamageTaken(Unit* /*target*/, Unit* attacker, int32& damage, SpellInfo const* /*spellInfo*/) override
+    void ModifySpellDamageTaken(Unit* /*target*/, Unit* attacker, int32& damage, SpellInfo const* /*spellInfo*/)
     {
         if (!sIndividualProgression->enabled || !attacker)
             return;
@@ -649,7 +653,7 @@ public:
         }
     }
 
-    void ModifyMeleeDamage(Unit* /*target*/, Unit* attacker, uint32& damage) override
+    void ModifyMeleeDamage(Unit* /*target*/, Unit* attacker, uint32& damage)
     {
         if (!sIndividualProgression->enabled || !attacker)
             return;
@@ -675,7 +679,7 @@ public:
         }
     }
 
-    void ModifyPeriodicDamageAurasTick(Unit* /*target*/, Unit* attacker, uint32& damage, SpellInfo const* spellInfo) override
+    void ModifyPeriodicDamageAurasTick(Unit* /*target*/, Unit* attacker, uint32& damage, SpellInfo const* spellInfo)
     {
         if (!sIndividualProgression->enabled || !attacker)
             return;

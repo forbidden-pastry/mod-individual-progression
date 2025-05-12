@@ -181,23 +181,23 @@ public:
         {
             return true;
         }
-        if (mapid == MAP_BLACKWING_LAIR && !sIndividualProgression->hasPassedProgression(player, PROGRESSION_MOLTEN_CORE))
+        if (mapid == IPP_MAP_BLACKWING_LAIR && !sIndividualProgression->hasPassedProgression(player, PROGRESSION_MOLTEN_CORE))
         {
             return false;
         }
-        if (mapid == MAP_ZUL_GURUB && !sIndividualProgression->hasPassedProgression(player, PROGRESSION_BLACKWING_LAIR))
+        if (mapid == IPP_MAP_ZUL_GURUB && !sIndividualProgression->hasPassedProgression(player, PROGRESSION_BLACKWING_LAIR))
         {
             return false;
         }
-        if (mapid == MAP_AQ_40 && !sIndividualProgression->hasPassedProgression(player, PROGRESSION_PRE_AQ))
+        if (mapid == IPP_MAP_AQ_40 && !sIndividualProgression->hasPassedProgression(player, PROGRESSION_PRE_AQ))
         {
             return false;
         }
-        if (mapid == MAP_AQ_20 && !sIndividualProgression->hasPassedProgression(player, PROGRESSION_PRE_AQ))
+        if (mapid == IPP_MAP_AQ_20 && !sIndividualProgression->hasPassedProgression(player, PROGRESSION_PRE_AQ))
         {
             return false;
         }
-        if (mapid == MAP_OUTLANDS)
+        if (mapid ==IPP_MAP_OUTLANDS)
         {
             if (!sIndividualProgression->hasPassedProgression(player, PROGRESSION_NAXX40))
             {
@@ -211,27 +211,27 @@ public:
                 return false;
             }
         }
-        if (mapid == MAP_ZUL_AMAN && !sIndividualProgression->hasPassedProgression(player, PROGRESSION_TBC_TIER_3))
+        if (mapid == IPP_MAP_ZUL_AMAN && !sIndividualProgression->hasPassedProgression(player, PROGRESSION_TBC_TIER_3))
         {
             return false;
         }
-        if (mapid == MAP_NORTHREND && !sIndividualProgression->hasPassedProgression(player, PROGRESSION_TBC_TIER_5))
+        if (mapid == IPP_MAP_NORTHREND && !sIndividualProgression->hasPassedProgression(player, PROGRESSION_TBC_TIER_5))
         {
             return false;
         }
-        if (mapid == MAP_ULDUAR && !sIndividualProgression->hasPassedProgression(player, PROGRESSION_WOTLK_TIER_1))
+        if (mapid == IPP_MAP_ULDUAR && !sIndividualProgression->hasPassedProgression(player, PROGRESSION_WOTLK_TIER_1))
         {
             return false;
         }
-        if ((mapid == MAP_TRIAL_OF_THE_CHAMPION || mapid == MAP_TRIAL_OF_THE_CRUSADER) && !sIndividualProgression->hasPassedProgression(player, PROGRESSION_WOTLK_TIER_2)){
+        if ((mapid == IPP_MAP_TRIAL_OF_THE_CHAMPION || mapid == IPP_MAP_TRIAL_OF_THE_CRUSADER) && !sIndividualProgression->hasPassedProgression(player, PROGRESSION_WOTLK_TIER_2)){
             return false;
         }
         // This will also restrict other Frozen Halls dungeons, because Forge of Souls must be completed first to access them
-        if ((mapid == MAP_ICC || mapid == MAP_FORGE_OF_SOULS) && !sIndividualProgression->hasPassedProgression(player, PROGRESSION_WOTLK_TIER_3))
+        if ((mapid == IPP_MAP_ICC || mapid == IPP_MAP_FORGE_OF_SOULS) && !sIndividualProgression->hasPassedProgression(player, PROGRESSION_WOTLK_TIER_3))
         {
             return false;
         }
-        if (mapid == MAP_RUBY_SANCTUM && !sIndividualProgression->hasPassedProgression(player, PROGRESSION_WOTLK_TIER_4))
+        if (mapid == IPP_MAP_RUBY_SANCTUM && !sIndividualProgression->hasPassedProgression(player, PROGRESSION_WOTLK_TIER_4))
         {
             return false;
         }
@@ -239,11 +239,11 @@ public:
         InstanceTemplate const* instanceTemplate = sObjectMgr->GetInstanceTemplate(mapid);
         if (instanceTemplate)
         {
-            if (instanceTemplate->Parent == MAP_OUTLANDS && !sIndividualProgression->hasPassedProgression(player, PROGRESSION_NAXX40))
+            if (instanceTemplate->Parent == IPP_MAP_OUTLANDS && !sIndividualProgression->hasPassedProgression(player, PROGRESSION_NAXX40))
             {
                 return false;
             }
-            if (instanceTemplate->Parent == MAP_NORTHREND && mapid != MAP_NAXXRAMAS && !sIndividualProgression->hasPassedProgression(player, PROGRESSION_TBC_TIER_5))
+            if (instanceTemplate->Parent == IPP_MAP_NORTHREND && mapid != IPP_MAP_NAXXRAMAS && !sIndividualProgression->hasPassedProgression(player, PROGRESSION_TBC_TIER_5))
             {
                 return false;
             }

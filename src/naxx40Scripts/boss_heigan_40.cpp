@@ -187,11 +187,11 @@ public:
                 me->CastStop();
                 me->SetReactState(REACT_AGGRESSIVE);
                 DoZoneInCombat();
-                events.ScheduleEvent(EVENT_DISRUPTION, urand(12000, 15000));
-                events.ScheduleEvent(EVENT_DECEPIT_FEVER, 17000);
-                events.ScheduleEvent(EVENT_ERUPT_SECTION, 15000);
-                events.ScheduleEvent(EVENT_SWITCH_PHASE, 90000);
-                events.ScheduleEvent(EVENT_TELEPORT_PLAYER, 40000);
+                events.ScheduleEvent(EVENT_DISRUPTION, Milliseconds(urand(12000, 15000)));
+                events.ScheduleEvent(EVENT_DECEPIT_FEVER, 17000ms);
+                events.ScheduleEvent(EVENT_ERUPT_SECTION, 15000ms);
+                events.ScheduleEvent(EVENT_SWITCH_PHASE, 90000ms);
+                events.ScheduleEvent(EVENT_TELEPORT_PLAYER, 40000ms);
                 portedPlayersThisPhase.clear();
             }
             else // if (phase == PHASE_FAST_DANCE)
@@ -203,11 +203,11 @@ public:
                 me->SetReactState(REACT_PASSIVE);
                 me->CastSpell(me, SPELL_TELEPORT_SELF, false);
                 me->SetFacingTo(2.40f);
-                events.ScheduleEvent(EVENT_PLAGUE_CLOUD, 1000);
-                events.ScheduleEvent(EVENT_ERUPT_SECTION, 7000);
-                events.ScheduleEvent(EVENT_SWITCH_PHASE, 45000);
+                events.ScheduleEvent(EVENT_PLAGUE_CLOUD, 1000ms);
+                events.ScheduleEvent(EVENT_ERUPT_SECTION, 7000ms);
+                events.ScheduleEvent(EVENT_SWITCH_PHASE, 45000ms);
             }
-            events.ScheduleEvent(EVENT_SAFETY_DANCE, 5000);
+            events.ScheduleEvent(EVENT_SAFETY_DANCE, 5000ms);
         }
 
         bool IsInRoom(Unit* who)

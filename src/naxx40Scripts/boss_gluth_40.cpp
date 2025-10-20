@@ -113,12 +113,12 @@ public:
         {
             BossAI::JustEngagedWith(who);
             me->SetInCombatWithZone();
-            events.ScheduleEvent(EVENT_MORTAL_WOUND, 10000);
-            events.ScheduleEvent(EVENT_ENRAGE, 22000);
-            events.ScheduleEvent(EVENT_DECIMATE, 105000);
-            events.ScheduleEvent(EVENT_BERSERK, 360000);
-            events.ScheduleEvent(EVENT_SUMMON_ZOMBIE, 10000);
-            events.ScheduleEvent(EVENT_CAN_EAT_ZOMBIE, 1000);
+            events.ScheduleEvent(EVENT_MORTAL_WOUND, 10000ms);
+            events.ScheduleEvent(EVENT_ENRAGE, 22000ms);
+            events.ScheduleEvent(EVENT_DECIMATE, 105000ms);
+            events.ScheduleEvent(EVENT_BERSERK, 360000ms);
+            events.ScheduleEvent(EVENT_SUMMON_ZOMBIE, 10000ms);
+            events.ScheduleEvent(EVENT_CAN_EAT_ZOMBIE, 1000ms);
         }
 
         void JustSummoned(Creature* summon) override
@@ -191,12 +191,12 @@ public:
                 int32 bp1 = 99; // Enrage melee haste
                 int32 bp2 = 49; // Enrage damage percent
                 me->CastCustomSpell(me, SPELL_ENRAGE, &bp1, &bp2, 0, true);
-                events.RepeatEvent(22000);
+                events.RepeatEvent(22000ms);
                 break;
             }
             case EVENT_MORTAL_WOUND:
                 me->CastSpell(me->GetVictim(), SPELL_MORTAL_WOUND, false);
-                events.RepeatEvent(10000);
+                events.RepeatEvent(10000ms);
                 break;
             case EVENT_DECIMATE:
                 Talk(EMOTE_DECIMATE);
@@ -218,7 +218,7 @@ public:
                         }
                     }
                 }
-                events.RepeatEvent(105000);
+                events.RepeatEvent(105000ms);
                 break;
             case EVENT_SUMMON_ZOMBIE:
             {
@@ -229,11 +229,11 @@ public:
                     me->SummonCreature(NPC_ZOMBIE_CHOW, zombiePos[urand(0, 2)]);
                     (rand == 2 ? rand = 0 : rand++);
                 }
-                events.RepeatEvent(10000);
+                events.RepeatEvent(10000ms);
                 break;
             }
             case EVENT_CAN_EAT_ZOMBIE:
-                events.RepeatEvent(1000);
+                events.RepeatEvent(1000ms);
                 if (me->GetVictim() && me->GetVictim()->GetEntry() == NPC_ZOMBIE_CHOW && me->IsWithinMeleeRange(me->GetVictim()))
                 {
                     if (me->GetVictim()->GetHealth() > 0) // Check if the zombie is alive

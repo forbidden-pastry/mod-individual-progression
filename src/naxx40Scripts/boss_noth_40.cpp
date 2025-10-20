@@ -105,12 +105,12 @@ public:
             me->RemoveUnitFlag(UNIT_FLAG_NOT_SELECTABLE | UNIT_FLAG_DISABLE_MOVE);
             me->SetControlled(false, UNIT_STATE_ROOT);
             events.Reset();
-            events.ScheduleEvent(EVENT_MOVE_TO_BALCONY, 110000);
+            events.ScheduleEvent(EVENT_MOVE_TO_BALCONY, 110000ms);
             //events.ScheduleEvent(EVENT_CURSE, urand(50000, 60000)); // more curses, down from 150s to 50-60s
-            events.ScheduleEvent(EVENT_SUMMON_PLAGUED_WARRIOR_ANNOUNCE, 10000);
+            events.ScheduleEvent(EVENT_SUMMON_PLAGUED_WARRIOR_ANNOUNCE, 10000ms);
             if (Is25ManRaid())
             {
-                events.ScheduleEvent(EVENT_BLINK, 26000);
+                events.ScheduleEvent(EVENT_BLINK, 26000ms);
             }
         }
 
@@ -121,8 +121,8 @@ public:
             me->SetUnitFlag(UNIT_FLAG_NOT_SELECTABLE | UNIT_FLAG_DISABLE_MOVE);
             me->SetControlled(true, UNIT_STATE_ROOT);
             events.Reset();
-            events.ScheduleEvent(EVENT_BALCONY_SUMMON_ANNOUNCE, 4000);
-            events.ScheduleEvent(EVENT_MOVE_TO_GROUND, 70000);
+            events.ScheduleEvent(EVENT_BALCONY_SUMMON_ANNOUNCE, 4000ms);
+            events.ScheduleEvent(EVENT_MOVE_TO_GROUND, 70000ms);
         }
 
         void SummonHelper(uint32 entry, uint32 count)
@@ -237,13 +237,13 @@ public:
                     {
                         me->CastCustomSpell(SPELL_CURSE_OF_THE_PLAGUEBRINGER, SPELLVALUE_MAX_TARGETS, 10, me, false); // TODO: Increase to 20 on 40man
                     }
-                    events.RepeatEvent(25000); // 50-60 seconds in 40man
+                    events.RepeatEvent(25000ms); // 50-60 seconds in 40man
                     break;
                 case EVENT_SUMMON_PLAGUED_WARRIOR_ANNOUNCE:
                     Talk(SAY_SUMMON);
                     Talk(EMOTE_SUMMON);
-                    events.RepeatEvent(30000);
-                    events.ScheduleEvent(EVENT_SUMMON_PLAGUED_WARRIOR_REAL, 4000);
+                    events.RepeatEvent(30000ms);
+                    events.ScheduleEvent(EVENT_SUMMON_PLAGUED_WARRIOR_REAL, 4000ms);
                     break;
                 case EVENT_SUMMON_PLAGUED_WARRIOR_REAL:
                     me->CastSpell(me, SPELL_SUMMON_PLAGUED_WARRIORS, true);
@@ -259,13 +259,13 @@ public:
                     me->CastSpell(me, SPELL_CRIPPLE, false);
                     me->CastSpell(me, SPELL_BLINK, true);
                     Talk(EMOTE_BLINK);
-                    events.RepeatEvent(30000);
+                    events.RepeatEvent(30000ms);
                     break;
                 // BALCONY
                 case EVENT_BALCONY_SUMMON_ANNOUNCE:
                     Talk(EMOTE_SUMMON_WAVE);
-                    events.RepeatEvent(30000);
-                    events.ScheduleEvent(EVENT_BALCONY_SUMMON_REAL, 4000);
+                    events.RepeatEvent(30000ms);
+                    events.ScheduleEvent(EVENT_BALCONY_SUMMON_REAL, 4000ms);
                     break;
                 case EVENT_BALCONY_SUMMON_REAL:
                     me->CastSpell(me, SPELL_SUMMON_PLAGUED_WARRIORS, true); // visual

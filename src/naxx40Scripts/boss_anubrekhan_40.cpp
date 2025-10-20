@@ -173,16 +173,16 @@ public:
                     go->SetGoState(GO_STATE_READY);
                 }
             }
-            events.ScheduleEvent(EVENT_IMPALE, 15000);
-            events.ScheduleEvent(EVENT_LOCUST_SWARM, urand(70000, 120000));
-            events.ScheduleEvent(EVENT_BERSERK, 600000);
+            events.ScheduleEvent(EVENT_IMPALE, 15000ms);
+            events.ScheduleEvent(EVENT_LOCUST_SWARM, Milliseconds(urand(70000, 120000)));
+            events.ScheduleEvent(EVENT_BERSERK, 600000ms);
             if (!summons.HasEntry(NPC_CRYPT_GUARD))
             {
                 SummonCryptGuards();
             }
             if (!Is25ManRaid())
             {
-                events.ScheduleEvent(EVENT_SPAWN_GUARD, urand(15000, 20000));
+                events.ScheduleEvent(EVENT_SPAWN_GUARD, Milliseconds(urand(15000, 20000)));
             }
         }
 
@@ -235,8 +235,8 @@ public:
                 {
                     Talk(EMOTE_LOCUST);
                     me->CastSpell(me, SPELL_LOCUST_SWARM, false);
-                    events.ScheduleEvent(EVENT_SPAWN_GUARD, 3000);
-                    events.RepeatEvent(90000);
+                    events.ScheduleEvent(EVENT_SPAWN_GUARD, 3000ms);
+                    events.RepeatEvent(90000ms);
                     break;
                 }
                 case EVENT_SPAWN_GUARD:

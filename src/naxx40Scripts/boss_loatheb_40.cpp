@@ -110,11 +110,11 @@ public:
         {
             BossAI::JustEngagedWith(who);
             me->SetInCombatWithZone();
-            events.ScheduleEvent(EVENT_NECROTIC_AURA, 10000);
-            events.ScheduleEvent(EVENT_DEATHBLOOM, 5000);
-            events.ScheduleEvent(EVENT_INEVITABLE_DOOM, 120000);
-            events.ScheduleEvent(EVENT_SUMMON_SPORE, 15000);
-            events.ScheduleEvent(EVENT_BERSERK, 720000);
+            events.ScheduleEvent(EVENT_NECROTIC_AURA, 10000ms);
+            events.ScheduleEvent(EVENT_DEATHBLOOM, 5000ms);
+            events.ScheduleEvent(EVENT_INEVITABLE_DOOM, 120000ms);
+            events.ScheduleEvent(EVENT_SUMMON_SPORE, 15000ms);
+            events.ScheduleEvent(EVENT_BERSERK, 720000ms);
             if (pInstance)
             {
                 pInstance->SetData(BOSS_LOATHEB, IN_PROGRESS);
@@ -148,21 +148,21 @@ public:
             {
                 case EVENT_SUMMON_SPORE:
                     me->CastSpell(me, SPELL_SUMMON_SPORE, true);
-                    events.RepeatEvent(35000);
+                    events.RepeatEvent(35000ms);
                     break;
                 case EVENT_NECROTIC_AURA:
                     me->CastSpell(me, SPELL_NECROTIC_AURA, true);
                     Talk(SAY_NECROTIC_AURA_APPLIED);
-                    events.ScheduleEvent(EVENT_NECROTIC_AURA_FADING, 14000);
-                    events.ScheduleEvent(EVENT_NECROTIC_AURA_REMOVED, 17000);
-                    events.RepeatEvent(20000);
+                    events.ScheduleEvent(EVENT_NECROTIC_AURA_FADING, 14000ms);
+                    events.ScheduleEvent(EVENT_NECROTIC_AURA_REMOVED, 17000ms);
+                    events.RepeatEvent(20000ms);
                     break;
                 case EVENT_DEATHBLOOM:
                 {
                     //me->CastSpell(me, SPELL_DEATHBLOOM, false);
                     int32 bp0 = 33; // TODO: Amplitude should be 6k, but is 1k. 200 dmg after 6 seconds
                     me->CastCustomSpell(me, SPELL_DEATHBLOOM, &bp0, 0, 0, false);
-                    events.RepeatEvent(30000);
+                    events.RepeatEvent(30000ms);
                     break;
                 }
                 case EVENT_INEVITABLE_DOOM:
@@ -170,7 +170,7 @@ public:
                     int32 bp0 = 2549;
                     me->CastCustomSpell(me, SPELL_INEVITABLE_DOOM, &bp0, 0, 0, false);
                     doomCounter++;
-                    events.RepeatEvent(doomCounter < 6 ? 30000 : 15000);
+                    events.RepeatEvent(Milliseconds(doomCounter < 6 ? 30000 : 15000));
                     break;
                 }
                 case EVENT_BERSERK:

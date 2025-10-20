@@ -303,17 +303,17 @@ public:
             me->SetTarget();
             me->SetReactState(REACT_PASSIVE);
             me->CastSpell(me, SPELL_KELTHUZAD_CHANNEL, false);
-            events.ScheduleEvent(EVENT_SPAWN_POOL, 5000);
-            events.ScheduleEvent(EVENT_SUMMON_SOLDIER, 6400);
-            events.ScheduleEvent(EVENT_SUMMON_UNSTOPPABLE_ABOMINATION, 10000);
-            events.ScheduleEvent(EVENT_SUMMON_SOUL_WEAVER, 12000);
-            events.ScheduleEvent(EVENT_PHASE_2, 228000);
-            events.ScheduleEvent(EVENT_ENRAGE, 900000);
+            events.ScheduleEvent(EVENT_SPAWN_POOL, 5000ms);
+            events.ScheduleEvent(EVENT_SUMMON_SOLDIER, 6400ms);
+            events.ScheduleEvent(EVENT_SUMMON_UNSTOPPABLE_ABOMINATION, 10000ms);
+            events.ScheduleEvent(EVENT_SUMMON_SOUL_WEAVER, 12000ms);
+            events.ScheduleEvent(EVENT_PHASE_2, 228000ms);
+            events.ScheduleEvent(EVENT_ENRAGE, 900000ms);
             if (pInstance)
             {
                 if (GameObject* go = me->GetMap()->GetGameObject(pInstance->GetGuidData(DATA_KELTHUZAD_FLOOR)))
                 {
-                    events.ScheduleEvent(EVENT_FLOOR_CHANGE, 15000);
+                    events.ScheduleEvent(EVENT_FLOOR_CHANGE, 15000ms);
                     go->SetGoState(GO_STATE_ACTIVE);
                 }
             }
@@ -355,7 +355,7 @@ public:
                     {
                         if (GameObject* go = me->GetMap()->GetGameObject(pInstance->GetGuidData(DATA_KELTHUZAD_FLOOR)))
                         {
-                            events.ScheduleEvent(EVENT_FLOOR_CHANGE, 15000);
+                            events.ScheduleEvent(EVENT_FLOOR_CHANGE, 15000ms);
                             go->SetGoState(GO_STATE_READY);
                             go->SetPhaseMask(2, true);
                         }
@@ -366,15 +366,15 @@ public:
                     break;
                 case EVENT_SUMMON_SOLDIER:
                     SummonHelper(NPC_SOLDIER_OF_THE_FROZEN_WASTES, 1);
-                    events.RepeatEvent(3100);
+                    events.RepeatEvent(3100ms);
                     break;
                 case EVENT_SUMMON_UNSTOPPABLE_ABOMINATION:
                     SummonHelper(NPC_UNSTOPPABLE_ABOMINATION, 1);
-                    events.RepeatEvent(18500);
+                    events.RepeatEvent(18500ms);
                     break;
                 case EVENT_SUMMON_SOUL_WEAVER:
                     SummonHelper(NPC_SOUL_WEAVER, 1);
-                    events.RepeatEvent(30000);
+                    events.RepeatEvent(30000ms);
                     break;
                 case EVENT_PHASE_2:
                     Talk(EMOTE_PHASE_TWO);
@@ -385,15 +385,15 @@ public:
                     me->GetMotionMaster()->MoveChase(me->GetVictim());
                     me->RemoveAura(SPELL_KELTHUZAD_CHANNEL);
                     me->SetReactState(REACT_AGGRESSIVE);
-                    events.ScheduleEvent(EVENT_FROST_BOLT_SINGLE, urand(2000, 10000));
-                    events.ScheduleEvent(EVENT_FROST_BOLT_MULTI, urand(15000, 30000));
-                    events.ScheduleEvent(EVENT_DETONATE_MANA, 30000);
-                    events.ScheduleEvent(EVENT_PHASE_3, 1000);
-                    events.ScheduleEvent(EVENT_SHADOW_FISSURE, 25000);
-                    events.ScheduleEvent(EVENT_FROST_BLAST, 45000);
+                    events.ScheduleEvent(EVENT_FROST_BOLT_SINGLE, Milliseconds(urand(2000, 10000)));
+                    events.ScheduleEvent(EVENT_FROST_BOLT_MULTI, Milliseconds(urand(15000, 30000)));
+                    events.ScheduleEvent(EVENT_DETONATE_MANA, 30000ms);
+                    events.ScheduleEvent(EVENT_PHASE_3, 1000ms);
+                    events.ScheduleEvent(EVENT_SHADOW_FISSURE, 25000ms);
+                    events.ScheduleEvent(EVENT_FROST_BLAST, 45000ms);
                     if (Is25ManRaid())
                     {
-                        events.ScheduleEvent(EVENT_CHAINS, 90000);
+                        events.ScheduleEvent(EVENT_CHAINS, 90000ms);
                     }
                     break;
                 case EVENT_ENRAGE:
@@ -401,18 +401,18 @@ public:
                     break;
                 case EVENT_FROST_BOLT_SINGLE:
                     me->CastSpell(me->GetVictim(), SPELL_FROST_BOLT_SINGLE, false);
-                    events.RepeatEvent(urand(2000, 10000));
+                    events.RepeatEvent(Milliseconds(urand(2000, 10000)));
                     break;
                 case EVENT_FROST_BOLT_MULTI:
                     me->CastSpell(me, SPELL_FROST_BOLT_MULTI, false);
-                    events.RepeatEvent(urand(15000, 30000));
+                    events.RepeatEvent(Milliseconds(urand(15000, 30000)));
                     break;
                 case EVENT_SHADOW_FISSURE:
                     if (Unit* target = SelectTarget(SelectTargetMethod::Random, 0, 100.0f, true))
                     {
                         me->CastSpell(target, SPELL_SHADOW_FISURE, false);
                     }
-                    events.RepeatEvent(25000);
+                    events.RepeatEvent(25000ms);
                     break;
                 case EVENT_FROST_BLAST:
                     if (Unit* target = SelectTarget(SelectTargetMethod::Random, 1, 0, true))
@@ -420,7 +420,7 @@ public:
                         me->CastSpell(target, SPELL_FROST_BLAST, false);
                     }
                     Talk(SAY_FROST_BLAST);
-                    events.RepeatEvent(45000);
+                    events.RepeatEvent(45000ms);
                     break;
                 case EVENT_CHAINS:
                     for (uint8 i = 0; i < 3; ++i)
@@ -431,7 +431,7 @@ public:
                         }
                     }
                     Talk(SAY_CHAIN);
-                    events.RepeatEvent(90000);
+                    events.RepeatEvent(90000ms);
                     break;
                 case EVENT_DETONATE_MANA:
                     {
@@ -453,15 +453,15 @@ public:
                             me->CastSpell(*itr, SPELL_DETONATE_MANA, false);
                             Talk(SAY_SPECIAL);
                         }
-                        events.RepeatEvent(30000);
+                        events.RepeatEvent(30000ms);
                         break;
                     }
                 case EVENT_PHASE_3:
                     if (me->HealthBelowPct(45))
                     {
                         Talk(SAY_REQUEST_AID);
-                        events.DelayEvents(5500);
-                        events.ScheduleEvent(EVENT_P3_LICH_KING_SAY, 5000);
+                        events.DelayEvents(5500ms);
+                        events.ScheduleEvent(EVENT_P3_LICH_KING_SAY, 5000ms);
                         if (GameObject* go = me->GetMap()->GetGameObject(pInstance->GetGuidData(DATA_KELTHUZAD_PORTAL_1)))
                         {
                             go->SetGoState(GO_STATE_ACTIVE);
@@ -480,7 +480,7 @@ public:
                         }
                         break;
                     }
-                    events.RepeatEvent(1000);
+                    events.RepeatEvent(1000ms);
                     break;
                 case EVENT_P3_LICH_KING_SAY:
                     if (pInstance)
@@ -492,7 +492,7 @@ public:
                     }
                     for (uint8 i = 0 ; i < 5; ++i)
                     {
-                        events.ScheduleEvent(EVENT_SUMMON_GUARDIAN_OF_ICECROWN, 10000 + (i * 5000));
+                        events.ScheduleEvent(EVENT_SUMMON_GUARDIAN_OF_ICECROWN, Milliseconds(10000 + (i * 5000)));
                     }
                     break;
                 case EVENT_SUMMON_GUARDIAN_OF_ICECROWN:
@@ -604,12 +604,12 @@ public:
             me->SetInCombatWithZone();
             if (me->GetEntry() == NPC_UNSTOPPABLE_ABOMINATION)
             {
-                events.ScheduleEvent(EVENT_MINION_FRENZY, 1000);
-                events.ScheduleEvent(EVENT_MINION_MORTAL_WOUND, 5000);
+                events.ScheduleEvent(EVENT_MINION_FRENZY, 1000ms);
+                events.ScheduleEvent(EVENT_MINION_MORTAL_WOUND, 5000ms);
             }
             else if (me->GetEntry() == NPC_GUARDIAN_OF_ICECROWN)
             {
-                events.ScheduleEvent(EVENT_MINION_BLOOD_TAP, 15000);
+                events.ScheduleEvent(EVENT_MINION_BLOOD_TAP, 15000ms);
             }
         }
 
@@ -642,7 +642,7 @@ public:
             {
                 case EVENT_MINION_MORTAL_WOUND:
                     me->CastSpell(me->GetVictim(), SPELL_MORTAL_WOUND, false);
-                    events.RepeatEvent(15000);
+                    events.RepeatEvent(15000ms);
                     break;
                 case EVENT_MINION_FRENZY:
                     if (me->HealthBelowPct(35))
@@ -650,11 +650,11 @@ public:
                         me->CastSpell(me, SPELL_FRENZY, true);
                         break;
                     }
-                    events.RepeatEvent(1000);
+                    events.RepeatEvent(1000ms);
                     break;
                 case EVENT_MINION_BLOOD_TAP:
                     me->CastSpell(me->GetVictim(), SPELL_BLOOD_TAP, false);
-                    events.RepeatEvent(15000);
+                    events.RepeatEvent(15000ms);
                     break;
             }
             DoMeleeAttackIfReady();

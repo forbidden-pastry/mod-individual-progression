@@ -96,9 +96,9 @@ public:
             BossAI::JustEngagedWith(who);
             Talk(SAY_AGGRO);
             me->SetInCombatWithZone();
-            events.ScheduleEvent(EVENT_HATEFUL_STRIKE, 1200);
-            events.ScheduleEvent(EVENT_BERSERK, 7 * 60 * 1000); // 7 minutes enrange
-            events.ScheduleEvent(EVENT_HEALTH_CHECK, 1000);
+            events.ScheduleEvent(EVENT_HATEFUL_STRIKE, 1200ms);
+            events.ScheduleEvent(EVENT_BERSERK, Milliseconds(7 * 60 * 1000)); // 7 minutes enrange
+            events.ScheduleEvent(EVENT_HEALTH_CHECK, 1000ms);
         }
 
         void UpdateAI(uint32 diff) override
@@ -158,17 +158,17 @@ public:
                             int32 dmg = urand(22100,22850);
                             me->CastCustomSpell(finalTarget, SPELL_HATEFUL_STRIKE, &dmg, 0, 0, false);
                         }
-                        events.RepeatEvent(1200);
+                        events.RepeatEvent(1200ms);
                         break;
                     }
                 case EVENT_BERSERK:
                     Talk(EMOTE_BERSERK);
                     me->CastSpell(me, SPELL_BERSERK, true);
-                    events.ScheduleEvent(EVENT_SLIME_BOLT, 3000);
+                    events.ScheduleEvent(EVENT_SLIME_BOLT, 3000ms);
                     break;
                 case EVENT_SLIME_BOLT:
                     me->CastSpell(me, SPELL_SLIME_BOLT, false);
-                    events.RepeatEvent(3000);
+                    events.RepeatEvent(3000ms);
                     break;
                 case EVENT_HEALTH_CHECK:
                     if (me->GetHealthPct() <= 5)
@@ -177,7 +177,7 @@ public:
                         me->CastSpell(me, SPELL_FRENZY, true);
                         break;
                     }
-                    events.RepeatEvent(1000);
+                    events.RepeatEvent(1000ms);
                     break;
             }
             DoMeleeAttackIfReady();

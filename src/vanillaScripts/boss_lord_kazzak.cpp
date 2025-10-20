@@ -86,13 +86,13 @@ public:
         void Reset() override
         {
             _events.Reset();
-            _events.ScheduleEvent(EVENT_SHADOW_VOLLEY, urand(6000, 10000));
-            _events.ScheduleEvent(EVENT_CLEAVE, 7000);
-            _events.ScheduleEvent(EVENT_THUNDERCLAP, urand(14000, 18000));
-            _events.ScheduleEvent(EVENT_VOID_BOLT, 30000);
-            _events.ScheduleEvent(EVENT_MARK_OF_KAZZAK, 25000);
-            _events.ScheduleEvent(EVENT_TWISTED_REFLECTION, 33000);
-            _events.ScheduleEvent(EVENT_BERSERK, 180000);
+            _events.ScheduleEvent(EVENT_SHADOW_VOLLEY, Milliseconds(urand(6000, 10000)));
+            _events.ScheduleEvent(EVENT_CLEAVE, 7000ms);
+            _events.ScheduleEvent(EVENT_THUNDERCLAP, Millseconds(urand(14000, 18000)));
+            _events.ScheduleEvent(EVENT_VOID_BOLT, 30000ms);
+            _events.ScheduleEvent(EVENT_MARK_OF_KAZZAK, 25000ms);
+            _events.ScheduleEvent(EVENT_TWISTED_REFLECTION, 33000ms);
+            _events.ScheduleEvent(EVENT_BERSERK, 180000ms);
             _supremeMode = false;
         }
 
@@ -146,41 +146,41 @@ public:
                     case EVENT_SHADOW_VOLLEY:
                         DoCastVictim(SPELL_SHADOW_VOLLEY);
                         if (!_supremeMode)
-                            _events.ScheduleEvent(EVENT_SHADOW_VOLLEY, urand(4000, 30000));
+                            _events.ScheduleEvent(EVENT_SHADOW_VOLLEY, Milliseconds(urand(4000, 30000)));
                         else
-                            _events.ScheduleEvent(EVENT_SHADOW_VOLLEY, 1000);
+                            _events.ScheduleEvent(EVENT_SHADOW_VOLLEY, 1000ms);
                         break;
                     case EVENT_CLEAVE:
                         DoCastVictim(SPELL_CLEAVE);
-                        _events.ScheduleEvent(EVENT_CLEAVE, urand(8000, 12000));
+                        _events.ScheduleEvent(EVENT_CLEAVE, Milliseconds(urand(8000, 12000)));
                         break;
                     case EVENT_THUNDERCLAP:
                         DoCastVictim(SPELL_THUNDERCLAP);
-                        _events.ScheduleEvent(EVENT_THUNDERCLAP, urand(10000, 14000));
+                        _events.ScheduleEvent(EVENT_THUNDERCLAP, Milliseconds(urand(10000, 14000)));
                         break;
                     case EVENT_VOID_BOLT:
                         DoCastVictim(SPELL_VOID_BOLT);
-                        _events.ScheduleEvent(EVENT_VOID_BOLT, urand(15000, 18000));
+                        _events.ScheduleEvent(EVENT_VOID_BOLT, Milliseconds(urand(15000, 18000)));
                         break;
                     case EVENT_MARK_OF_KAZZAK:
                         if (Unit* target = SelectTarget(SelectTargetMethod::Random, 1, [&](Unit* u) { return u && !u->IsPet() && u->getPowerType() == POWER_MANA; }))
                             DoCast(target, SPELL_MARK_OF_KAZZAK);
-                        _events.ScheduleEvent(EVENT_MARK_OF_KAZZAK, 20000);
+                        _events.ScheduleEvent(EVENT_MARK_OF_KAZZAK, 20000ms);
                         break;
                     case EVENT_ENRAGE:
                         Talk(EMOTE_FRENZY);
                         DoCast(me, SPELL_ENRAGE);
-                        _events.ScheduleEvent(EVENT_ENRAGE, 30000);
+                        _events.ScheduleEvent(EVENT_ENRAGE, 30000ms);
                         break;
                     case EVENT_TWISTED_REFLECTION:
                         if (Unit* target = SelectTarget(SelectTargetMethod::Random, 1, 0.0f, true))
                             DoCast(target, SPELL_TWISTED_REFLECTION);
-                        _events.ScheduleEvent(EVENT_TWISTED_REFLECTION, 15000);
+                        _events.ScheduleEvent(EVENT_TWISTED_REFLECTION, 15000ms);
                         break;
                     case EVENT_BERSERK:
                         _supremeMode = true;
                         Talk(EMOTE_SUPREME);
-                        _events.ScheduleEvent(EVENT_SHADOW_VOLLEY, 1000);
+                        _events.ScheduleEvent(EVENT_SHADOW_VOLLEY, 1000ms);
                         break;
                     default:
                         break;

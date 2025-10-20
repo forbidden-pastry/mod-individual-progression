@@ -509,20 +509,20 @@ public:
 
                     DoCastAOE(SPELL_BELLOWINGROAR);
 
-                    events.ScheduleEvent(EVENT_ERUPTION, 0);
-                    events.ScheduleEvent(EVENT_SPELL_WINGBUFFET, urand(10000, 20000));
-                    events.ScheduleEvent(EVENT_SPELL_FLAMEBREATH, urand(10000, 20000));
-                    events.ScheduleEvent(EVENT_SPELL_TAILSWEEP, urand(15000, 20000));
-                    events.ScheduleEvent(EVENT_SPELL_CLEAVE, urand(2000, 5000));
-                    events.ScheduleEvent(EVENT_SPELL_BELLOWINGROAR, 15000);
-                    events.ScheduleEvent(EVENT_SUMMON_WHELP, 10000);
+                    events.ScheduleEvent(EVENT_ERUPTION, 0ms);
+                    events.ScheduleEvent(EVENT_SPELL_WINGBUFFET, Milliseconds(urand(10000, 20000)));
+                    events.ScheduleEvent(EVENT_SPELL_FLAMEBREATH, Milliseconds(urand(10000, 20000)));
+                    events.ScheduleEvent(EVENT_SPELL_TAILSWEEP, Milliseconds(urand(15000, 20000)));
+                    events.ScheduleEvent(EVENT_SPELL_CLEAVE, Milliseconds(urand(2000, 5000)));
+                    events.ScheduleEvent(EVENT_SPELL_BELLOWINGROAR, 15000ms);
+                    events.ScheduleEvent(EVENT_SUMMON_WHELP, 10000ms);
                     break;
                 }
                 case EVENT_SPELL_BELLOWINGROAR:
                 {
                     DoCastAOE(SPELL_BELLOWINGROAR);
-                    events.RepeatEvent(22000);
-                    events.ScheduleEvent(EVENT_ERUPTION, 0);
+                    events.RepeatEvent(22000ms);
+                    events.ScheduleEvent(EVENT_ERUPTION, 0ms);
                     break;
                 }
                 case EVENT_ERUPTION:
@@ -539,7 +539,7 @@ public:
                     float dist  = rand_norm() * 4.0f;
                     me->CastSpell(-33.18f + cos(angle) * dist, -258.80f + sin(angle) * dist, -89.0f, SPELL_SUMMON_WHELP, true);
                     me->CastSpell(-32.535f + cos(angle) * dist, -170.190f + sin(angle) * dist, -89.0f, SPELL_SUMMON_WHELP, true);
-                    events.RepeatEvent(30000);
+                    events.RepeatEvent(30000ms);
                     break;
                 }
             }

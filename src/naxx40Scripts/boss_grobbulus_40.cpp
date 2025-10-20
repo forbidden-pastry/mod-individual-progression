@@ -99,10 +99,10 @@ public:
             BossAI::JustEngagedWith(who);
             PullChamberAdds();
             me->SetInCombatWithZone();
-            events.ScheduleEvent(EVENT_POISON_CLOUD, 15000);
-            events.ScheduleEvent(EVENT_MUTATING_INJECTION, 12000);
-            events.ScheduleEvent(EVENT_SLIME_SPRAY, 10000);
-            events.ScheduleEvent(EVENT_BERSERK, 12 * 60 * 1000);  // 12 minute enrage
+            events.ScheduleEvent(EVENT_POISON_CLOUD, 15000ms);
+            events.ScheduleEvent(EVENT_MUTATING_INJECTION, 12000ms);
+            events.ScheduleEvent(EVENT_SLIME_SPRAY, 10000ms);
+            events.ScheduleEvent(EVENT_BERSERK, 12 * 60 * 1000ms);  // 12 minute enrage
         }
 
         void SpellHitTarget(Unit* target, SpellInfo const* spellInfo) override
@@ -164,7 +164,7 @@ public:
             {
                 case EVENT_POISON_CLOUD:
                     me->CastSpell(me, SPELL_POISON_CLOUD, true);
-                    events.RepeatEvent(15000);
+                    events.RepeatEvent(15000ms);
                     break;
                 case EVENT_BERSERK:
                     me->CastSpell(me, SPELL_BERSERK, true);
@@ -174,7 +174,7 @@ public:
                     Talk(EMOTE_SLIME);
                     int32 modifiedSlimeSprayDamage = urand(3200, 3400);
                     me->CastCustomSpell(me->GetVictim(), SPELL_SLIME_SPRAY, &modifiedSlimeSprayDamage, 0, 0, false);
-                    events.RepeatEvent(20000);
+                    events.RepeatEvent(20000ms);
                     break;
                 }
                 case EVENT_MUTATING_INJECTION:
@@ -182,7 +182,7 @@ public:
                     {
                         me->CastSpell(target, SPELL_MUTATING_INJECTION, false);
                     }
-                    events.RepeatEvent(6000 + uint32(120 * me->GetHealthPct()));
+                    events.RepeatEvent(Milliseconds(6000ms + uint32(120 * me->GetHealthPct())));
                     break;
             }
             DoMeleeAttackIfReady();

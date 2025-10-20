@@ -52,12 +52,12 @@ public:
         void JustEngagedWith(Unit* /*who*/) override
         {
             _JustEngagedWith();
-            events.ScheduleEvent(EVENT_FLAMESTRIKE, 6000);
-            events.ScheduleEvent(EVENT_CLEAVE,    8000);
-            events.ScheduleEvent(EVENT_CONFLAGRATION, 15000);
-            events.ScheduleEvent(EVENT_THUNDERCLAP,    17000);
-            events.ScheduleEvent(EVENT_PIERCE_ARMOR, 5000);
-            events.ScheduleEvent(EVENT_RAGE, 1000);
+            events.ScheduleEvent(EVENT_FLAMESTRIKE, 6000ms);
+            events.ScheduleEvent(EVENT_CLEAVE,    8000ms);
+            events.ScheduleEvent(EVENT_CONFLAGRATION, 15000ms);
+            events.ScheduleEvent(EVENT_THUNDERCLAP,    17000ms);
+            events.ScheduleEvent(EVENT_PIERCE_ARMOR, 5000ms);
+            events.ScheduleEvent(EVENT_RAGE, 1000ms);
 
             // Kill players if the door wasn't opened
             if (!instance->GetData(DATA_UBRS_DOOR_OPEN))
@@ -82,11 +82,11 @@ public:
                 {
                     case EVENT_FLAMESTRIKE:
                         DoCastAOE(SPELL_FLAMESTRIKE);
-                        events.ScheduleEvent(EVENT_FLAMESTRIKE, 10000);
+                        events.ScheduleEvent(EVENT_FLAMESTRIKE, 10000ms);
                         break;
                     case EVENT_CLEAVE:
                         DoCastVictim(SPELL_CLEAVE);
-                        events.ScheduleEvent(EVENT_CLEAVE, 8000);
+                        events.ScheduleEvent(EVENT_CLEAVE, 8000ms);
                         break;
                     case EVENT_CONFLAGRATION:
                         DoCastVictim(SPELL_CONFLAGRATION);
@@ -97,20 +97,20 @@ public:
                             _conflagrateThreat = me->GetThreatMgr().GetThreat(me->GetVictim());
                             me->GetThreatMgr().ModifyThreatByPercent(target, -100);
                         }
-                        events.ScheduleEvent(EVENT_CONFLAGRATION, 18000);
-                        events.ScheduleEvent(EVENT_CHECK_CONFLAGRATION_TARGET, 10000);
+                        events.ScheduleEvent(EVENT_CONFLAGRATION, 18000ms);
+                        events.ScheduleEvent(EVENT_CHECK_CONFLAGRATION_TARGET, 10000ms);
                         break;
                     case EVENT_THUNDERCLAP:
                         DoCastVictim(SPELL_THUNDERCLAP);
-                        events.ScheduleEvent(EVENT_THUNDERCLAP, 20000);
+                        events.ScheduleEvent(EVENT_THUNDERCLAP, 20000ms);
                         break;
                     case EVENT_PIERCE_ARMOR:
                         DoCastVictim(SPELL_PIERCE_ARMOR);
-                        events.ScheduleEvent(EVENT_PIERCE_ARMOR, 40000);
+                        events.ScheduleEvent(EVENT_PIERCE_ARMOR, 40000ms);
                         break;
                     case EVENT_RAGE:
                         DoCastSelf(SPELL_RAGE);
-                        events.ScheduleEvent(EVENT_RAGE, 35000);
+                        events.ScheduleEvent(EVENT_RAGE, 35000ms);
                         break;
                     case EVENT_CHECK_CONFLAGRATION_TARGET:
                         if (Unit* target = ObjectAccessor::GetUnit(*me, _conflagrateTarget))

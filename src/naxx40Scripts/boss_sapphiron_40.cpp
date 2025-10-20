@@ -405,7 +405,8 @@ public:
                             blockList.push_back((*itr)->GetGUID());
                             currentTarget = (*itr)->GetGUID();
                             --iceboltCount;
-                            events.ScheduleEvent(EVENT_FLIGHT_ICEBOLT, Milliseconds((me->GetExactDist(*itr) / 13.0f)*IN_MILLISECONDS));
+                            // Should I have been more specific than just int?
+                            events.ScheduleEvent(EVENT_FLIGHT_ICEBOLT, Milliseconds(int((me->GetExactDist(*itr) / 13.0f)*IN_MILLISECONDS)));
                         }
                         else
                         {

@@ -482,7 +482,7 @@ public:
                     Talk(EMOTE_BREATH);
                     me->SetFacingTo(OnyxiaMoveData[CurrentWP].o);
                     DoCastAOE(OnyxiaMoveData[CurrentWP].spellId);
-                    events.ScheduleEvent(EVENT_SPELL_BREATH, 8250);
+                    events.ScheduleEvent(EVENT_SPELL_BREATH, 8250ms);
                     break;
                 }
                 case EVENT_SPELL_BREATH:

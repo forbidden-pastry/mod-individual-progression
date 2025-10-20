@@ -88,7 +88,7 @@ public:
             _events.Reset();
             _events.ScheduleEvent(EVENT_SHADOW_VOLLEY, Milliseconds(urand(6000, 10000)));
             _events.ScheduleEvent(EVENT_CLEAVE, 7000ms);
-            _events.ScheduleEvent(EVENT_THUNDERCLAP, Millseconds(urand(14000, 18000)));
+            _events.ScheduleEvent(EVENT_THUNDERCLAP, Milliseconds(urand(14000, 18000)));
             _events.ScheduleEvent(EVENT_VOID_BOLT, 30000ms);
             _events.ScheduleEvent(EVENT_MARK_OF_KAZZAK, 25000ms);
             _events.ScheduleEvent(EVENT_TWISTED_REFLECTION, 33000ms);

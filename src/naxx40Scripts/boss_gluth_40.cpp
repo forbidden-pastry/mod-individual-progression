@@ -229,11 +229,11 @@ public:
                     me->SummonCreature(NPC_ZOMBIE_CHOW, zombiePos[urand(0, 2)]);
                     (rand == 2 ? rand = 0 : rand++);
                 }
-                events.RepeatEvent(10000ms);
+                events.Repeat(10000ms);
                 break;
             }
             case EVENT_CAN_EAT_ZOMBIE:
-                events.RepeatEvent(1000ms);
+                events.Repeat(1000ms);
                 if (me->GetVictim() && me->GetVictim()->GetEntry() == NPC_ZOMBIE_CHOW && me->IsWithinMeleeRange(me->GetVictim()))
                 {
                     if (me->GetVictim()->GetHealth() > 0) // Check if the zombie is alive

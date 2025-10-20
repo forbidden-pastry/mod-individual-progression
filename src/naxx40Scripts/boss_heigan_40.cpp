@@ -295,13 +295,13 @@ public:
             {
                 case EVENT_DISRUPTION:
                     me->CastCustomSpell(SPELL_DISRUPTION, SPELLVALUE_RADIUS_MOD, 2500, me, false); // 25yd
-                    events.RepeatEvent(10000);
+                    events.Repeat(10000);
                     break;
                 case EVENT_DECEPIT_FEVER:
                 {
                     int32 bp1 = 499;
                     me->CastCustomSpell(me, SPELL_DECREPIT_FEVER, 0, &bp1, 0, false, nullptr, nullptr, ObjectGuid::Empty);
-                    events.RepeatEvent(urand(22000, 25000));
+                    events.Repeat(Milliseconds(urand(22000, 25000)));
                     break;
                 }
                 case EVENT_PLAGUE_CLOUD:
@@ -341,7 +341,7 @@ public:
                     {
                         Talk(SAY_TAUNT);
                     }
-                    events.RepeatEvent(currentPhase == PHASE_SLOW_DANCE ? 10000 : 4000);
+                    events.Repeat(currentPhase == PHASE_SLOW_DANCE ? 10000ms : 4000ms);
                     break;
                 case EVENT_SAFETY_DANCE:
                     {
@@ -355,7 +355,7 @@ public:
                                 return;
                             }
                         }
-                        events.RepeatEvent(5000);
+                        events.Repeat(5000);
                         return;
                     }
                 case EVENT_TELEPORT_PLAYER:

@@ -229,14 +229,14 @@ public:
                         int32 bp2 = IMPALE_BP2;
                         me->CastCustomSpell(target, SPELL_IMPALE, 0, &bp1, &bp2, false, nullptr, nullptr, ObjectGuid::Empty);
                     }
-                    events.RepeatEvent(20000ms);
+                    events.Repeat(20000ms);
                     break;
                 case EVENT_LOCUST_SWARM:
                 {
                     Talk(EMOTE_LOCUST);
                     me->CastSpell(me, SPELL_LOCUST_SWARM, false);
                     events.ScheduleEvent(EVENT_SPAWN_GUARD, 3000ms);
-                    events.RepeatEvent(90000ms);
+                    events.Repeat(90000ms);
                     break;
                 }
                 case EVENT_SPAWN_GUARD:

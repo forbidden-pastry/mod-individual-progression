@@ -366,15 +366,15 @@ public:
                     break;
                 case EVENT_SUMMON_SOLDIER:
                     SummonHelper(NPC_SOLDIER_OF_THE_FROZEN_WASTES, 1);
-                    events.RepeatEvent(3100ms);
+                    events.Repeat(3100ms);
                     break;
                 case EVENT_SUMMON_UNSTOPPABLE_ABOMINATION:
                     SummonHelper(NPC_UNSTOPPABLE_ABOMINATION, 1);
-                    events.RepeatEvent(18500ms);
+                    events.Repeat(18500ms);
                     break;
                 case EVENT_SUMMON_SOUL_WEAVER:
                     SummonHelper(NPC_SOUL_WEAVER, 1);
-                    events.RepeatEvent(30000ms);
+                    events.Repeat(30000ms);
                     break;
                 case EVENT_PHASE_2:
                     Talk(EMOTE_PHASE_TWO);
@@ -401,18 +401,18 @@ public:
                     break;
                 case EVENT_FROST_BOLT_SINGLE:
                     me->CastSpell(me->GetVictim(), SPELL_FROST_BOLT_SINGLE, false);
-                    events.RepeatEvent(Milliseconds(urand(2000, 10000)));
+                    events.Repeat(Milliseconds(urand(2000, 10000)));
                     break;
                 case EVENT_FROST_BOLT_MULTI:
                     me->CastSpell(me, SPELL_FROST_BOLT_MULTI, false);
-                    events.RepeatEvent(Milliseconds(urand(15000, 30000)));
+                    events.Repeat(Milliseconds(urand(15000, 30000)));
                     break;
                 case EVENT_SHADOW_FISSURE:
                     if (Unit* target = SelectTarget(SelectTargetMethod::Random, 0, 100.0f, true))
                     {
                         me->CastSpell(target, SPELL_SHADOW_FISURE, false);
                     }
-                    events.RepeatEvent(25000ms);
+                    events.Repeat(25000ms);
                     break;
                 case EVENT_FROST_BLAST:
                     if (Unit* target = SelectTarget(SelectTargetMethod::Random, 1, 0, true))
@@ -420,7 +420,7 @@ public:
                         me->CastSpell(target, SPELL_FROST_BLAST, false);
                     }
                     Talk(SAY_FROST_BLAST);
-                    events.RepeatEvent(45000ms);
+                    events.Repeat(45000ms);
                     break;
                 case EVENT_CHAINS:
                     for (uint8 i = 0; i < 3; ++i)
@@ -431,7 +431,7 @@ public:
                         }
                     }
                     Talk(SAY_CHAIN);
-                    events.RepeatEvent(90000ms);
+                    events.Repeat(90000ms);
                     break;
                 case EVENT_DETONATE_MANA:
                     {
@@ -453,7 +453,7 @@ public:
                             me->CastSpell(*itr, SPELL_DETONATE_MANA, false);
                             Talk(SAY_SPECIAL);
                         }
-                        events.RepeatEvent(30000ms);
+                        events.Repeat(30000ms);
                         break;
                     }
                 case EVENT_PHASE_3:
@@ -480,7 +480,7 @@ public:
                         }
                         break;
                     }
-                    events.RepeatEvent(1000ms);
+                    events.Repeat(1000ms);
                     break;
                 case EVENT_P3_LICH_KING_SAY:
                     if (pInstance)

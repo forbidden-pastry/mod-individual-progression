@@ -244,18 +244,18 @@ public:
             case EVENT_WEB_SPRAY:
                 Talk(EMOTE_WEB_SPRAY);
                 me->CastCustomSpell(SPELL_WEB_SPRAY, SPELLVALUE_AURA_DURATION, 10000, nullptr, true);
-                events.RepeatEvent(40000ms);
+                events.Repeat(40000ms);
                 break;
             case EVENT_POISON_SHOCK:
             {
                 int32 bp0 = 1499;
                 me->CastCustomSpell(me->GetVictim(), SPELL_POISON_SHOCK, &bp0, nullptr, nullptr, false, nullptr, nullptr, me->GetGUID());
-                events.RepeatEvent(10000ms);
+                events.Repeat(10000ms);
                 break;
             }
             case EVENT_NECROTIC_POISON:
                 me->CastSpell(me->GetVictim(), SPELL_NECROTIC_POISON, false);
-                events.RepeatEvent(30000ms);
+                events.Repeat(30000ms);
                 break;
             case EVENT_SUMMON_SPIDERLINGS:
                 Talk(EMOTE_SPIDERS);
@@ -263,7 +263,7 @@ public:
                 {
                     me->SummonCreature(NPC_MAEXXNA_SPIDERLING, me->GetPositionX(), me->GetPositionY(), me->GetPositionZ(), me->GetOrientation());
                 }
-                events.RepeatEvent(40000ms);
+                events.Repeat(40000ms);
                 break;
             case EVENT_HEALTH_CHECK:
                 if (me->GetHealthPct() < 30)
@@ -271,7 +271,7 @@ public:
                     me->CastSpell(me, SPELL_FRENZY, true);
                     break;
                 }
-                events.RepeatEvent(1000ms);
+                events.Repeat(1000ms);
                 break;
             case EVENT_WEB_WRAP:
                 Talk(EMOTE_WEB_WRAP);

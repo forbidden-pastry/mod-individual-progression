@@ -274,7 +274,7 @@ public:
             {
                 case EVENT_MARK_CAST:
                     me->CastSpell(me, TABLE_SPELL_MARK[horsemanId], false);
-                    events.RepeatEvent(12000ms);
+                    events.Repeat(12000ms);
                     return;
                 case EVENT_BERSERK:
                     Talk(SAY_SPECIAL);
@@ -302,7 +302,7 @@ public:
                         int32 bp0 = 12824; // 14.5k to 13.5k
                         me->CastCustomSpell(me->GetVictim(), SPELL_KORTHAZZ_METEOR, &bp0, 0, 0, false);
                     }
-                    events.RepeatEvent(15000ms);
+                    events.Repeat(15000ms);
                     return;
                 case EVENT_SECONDARY_SPELL:
                     if (horsemanId == HORSEMAN_ZELIEK)
@@ -317,7 +317,7 @@ public:
                     {
                         me->CastSpell(me->GetVictim(), SPELL_BLAUMEUX_VOID_ZONE, false);
                     }
-                    events.RepeatEvent(15000ms);
+                    events.Repeat(15000ms);
                     return;
                 case EVENT_HEALTH_CHECK:
                     if (!doneFirstShieldWall && me->GetHealthPct() <= 50.0f)

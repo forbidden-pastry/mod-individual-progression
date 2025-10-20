@@ -212,7 +212,7 @@ public:
                         values.AddSpellMod(SPELLVALUE_BASE_POINT1, bp1);
                         me->CastCustomSpell(SPELL_POISON_BOLT_VOLLEY, values, me, TRIGGERED_NONE, nullptr, nullptr, ObjectGuid::Empty);
                     }
-                    events.RepeatEvent(urand(7000, 12000));
+                    events.Repeat(urand(7000, 12000));
                     break;
                 case EVENT_RAIN_OF_FIRE:
                     if (Unit* target = SelectTarget(SelectTargetMethod::Random, 0))
@@ -220,7 +220,7 @@ public:
                         int32 bp0 = RAIN_OF_FIRE_BP0;
                         me->CastCustomSpell(target, SPELL_RAIN_OF_FIRE, &bp0, 0, 0, false, nullptr, nullptr, ObjectGuid::Empty);
                     }
-                    events.RepeatEvent(urand(8000, 12000));
+                    events.Repeat(urand(8000, 12000));
                     break;
                 case EVENT_FRENZY:
                     if (!me->HasAura(SPELL_FRENZY))
@@ -231,11 +231,11 @@ public:
                         int32 bp1 = FRENZY_BP1;
                         int32 bp2 = FRENZY_BP2;
                         me->CastCustomSpell(me, SPELL_FRENZY, &bp0, &bp1, &bp2, true, nullptr, nullptr, ObjectGuid::Empty);
-                        events.RepeatEvent(60000);
+                        events.Repeat(60000);
                     }
                     else
                     {
-                        events.RepeatEvent(30000);
+                        events.Repeat(30000);
                     }
                     break;
             }

@@ -164,7 +164,7 @@ public:
             {
                 case EVENT_POISON_CLOUD:
                     me->CastSpell(me, SPELL_POISON_CLOUD, true);
-                    events.RepeatEvent(15000ms);
+                    events.Repeat(15000ms);
                     break;
                 case EVENT_BERSERK:
                     me->CastSpell(me, SPELL_BERSERK, true);
@@ -174,7 +174,7 @@ public:
                     Talk(EMOTE_SLIME);
                     int32 modifiedSlimeSprayDamage = urand(3200, 3400);
                     me->CastCustomSpell(me->GetVictim(), SPELL_SLIME_SPRAY, &modifiedSlimeSprayDamage, 0, 0, false);
-                    events.RepeatEvent(20000ms);
+                    events.Repeat(20000ms);
                     break;
                 }
                 case EVENT_MUTATING_INJECTION:
@@ -182,7 +182,7 @@ public:
                     {
                         me->CastSpell(target, SPELL_MUTATING_INJECTION, false);
                     }
-                    events.RepeatEvent(Milliseconds(6000ms + uint32(120 * me->GetHealthPct())));
+                    events.Repeat(Milliseconds(6000ms + uint32(120 * me->GetHealthPct())));
                     break;
             }
             DoMeleeAttackIfReady();

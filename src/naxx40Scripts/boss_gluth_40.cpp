@@ -191,12 +191,12 @@ public:
                 int32 bp1 = 99; // Enrage melee haste
                 int32 bp2 = 49; // Enrage damage percent
                 me->CastCustomSpell(me, SPELL_ENRAGE, &bp1, &bp2, 0, true);
-                events.RepeatEvent(22000ms);
+                events.Repeat(22000ms);
                 break;
             }
             case EVENT_MORTAL_WOUND:
                 me->CastSpell(me->GetVictim(), SPELL_MORTAL_WOUND, false);
-                events.RepeatEvent(10000ms);
+                events.Repeat(10000ms);
                 break;
             case EVENT_DECIMATE:
                 Talk(EMOTE_DECIMATE);
@@ -218,7 +218,7 @@ public:
                         }
                     }
                 }
-                events.RepeatEvent(105000ms);
+                events.Repeat(105000ms);
                 break;
             case EVENT_SUMMON_ZOMBIE:
             {

@@ -237,12 +237,12 @@ public:
                     {
                         me->CastCustomSpell(SPELL_CURSE_OF_THE_PLAGUEBRINGER, SPELLVALUE_MAX_TARGETS, 10, me, false); // TODO: Increase to 20 on 40man
                     }
-                    events.RepeatEvent(25000ms); // 50-60 seconds in 40man
+                    events.Repeat(25000ms); // 50-60 seconds in 40man
                     break;
                 case EVENT_SUMMON_PLAGUED_WARRIOR_ANNOUNCE:
                     Talk(SAY_SUMMON);
                     Talk(EMOTE_SUMMON);
-                    events.RepeatEvent(30000ms);
+                    events.Repeat(30000ms);
                     events.ScheduleEvent(EVENT_SUMMON_PLAGUED_WARRIOR_REAL, 4000ms);
                     break;
                 case EVENT_SUMMON_PLAGUED_WARRIOR_REAL:
@@ -259,12 +259,12 @@ public:
                     me->CastSpell(me, SPELL_CRIPPLE, false);
                     me->CastSpell(me, SPELL_BLINK, true);
                     Talk(EMOTE_BLINK);
-                    events.RepeatEvent(30000ms);
+                    events.Repeat(30000ms);
                     break;
                 // BALCONY
                 case EVENT_BALCONY_SUMMON_ANNOUNCE:
                     Talk(EMOTE_SUMMON_WAVE);
-                    events.RepeatEvent(30000ms);
+                    events.Repeat(30000ms);
                     events.ScheduleEvent(EVENT_BALCONY_SUMMON_REAL, 4000ms);
                     break;
                 case EVENT_BALCONY_SUMMON_REAL:

@@ -279,7 +279,7 @@ public:
                     return;
                 case EVENT_CLEAVE:
                     me->CastSpell(me->GetVictim(), SPELL_CLEAVE, false);
-                    events.RepeatEvent(10000ms);
+                    events.Repeat(10000ms);
                     return;
                 case EVENT_TAIL_SWEEP:
                     if (isNaxx40Sapp(me->GetEntry()))
@@ -290,7 +290,7 @@ public:
                     {
                         me->CastSpell(me, RAID_MODE(SPELL_TAIL_SWEEP_10, SPELL_TAIL_SWEEP_25), false);
                     }
-                    events.RepeatEvent(10000ms);
+                    events.Repeat(10000ms);
                     return;
                 case EVENT_LIFE_DRAIN:
                     if (isNaxx40Sapp(me->GetEntry()))
@@ -305,7 +305,7 @@ public:
                     {
                         me->CastCustomSpell(RAID_MODE(SPELL_LIFE_DRAIN_10, SPELL_LIFE_DRAIN_25), SPELLVALUE_MAX_TARGETS, RAID_MODE(2, 5), me, false);
                     }
-                    events.RepeatEvent(24000ms);
+                    events.Repeat(24000ms);
                     return;
                 case EVENT_BLIZZARD:
                     {
@@ -324,11 +324,11 @@ public:
                         }
                         if (isNaxx40Sapp(me->GetEntry()))
                         {
-                            events.RepeatEvent(6500ms);
+                            events.Repeat(6500ms);
                         }
                         else
                         {
-                            events.RepeatEvent(RAID_MODE(8000ms, 6500ms));
+                            events.Repeat(RAID_MODE(8000ms, 6500ms));
                         }
                         return;
                     }
@@ -337,7 +337,7 @@ public:
                     {
                         return;
                     }
-                    events.RepeatEvent(45000ms);
+                    events.Repeat(45000ms);
                     events.DelayEvents(35000ms);
                     me->SetReactState(REACT_PASSIVE);
                     me->AttackStop();
@@ -459,7 +459,7 @@ public:
                                 return;
                             }
                         }
-                        events.RepeatEvent(5000ms);
+                        events.Repeat(5000ms);
                         return;
                     }
             }

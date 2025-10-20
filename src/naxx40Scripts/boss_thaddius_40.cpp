@@ -344,12 +344,12 @@ public:
                     values.AddSpellMod(SPELLVALUE_BASE_POINT0, customChainLightningDamage);
                     values.AddSpellMod(SPELLVALUE_MAX_TARGETS, 15);
                     me->CastCustomSpell(SPELL_CHAIN_LIGHTNING, values, me->GetVictim(), TRIGGERED_NONE, nullptr, nullptr, ObjectGuid::Empty);
-                    events.RepeatEvent(15000ms);
+                    events.Repeat(15000ms);
                     break;
                 }
                 case EVENT_THADDIUS_POLARITY_SHIFT:
                     me->CastSpell(me, SPELL_POLARITY_SHIFT, false);
-                    events.RepeatEvent(30000ms);
+                    events.Repeat(30000ms);
                     break;
                 case EVENT_ALLOW_BALL_LIGHTNING:
                     ballLightningEnabled = true;
@@ -542,14 +542,14 @@ public:
             {
                 case EVENT_MINION_POWER_SURGE:
                     me->CastSpell(me, SPELL_POWER_SURGE, false);
-                    events.RepeatEvent(19000ms);
+                    events.Repeat(19000ms);
                     break;
                 case EVENT_MINION_STATIC_FIELD:
                     me->CastSpell(me, SPELL_STATIC_FIELD, false);
-                    events.RepeatEvent(3000ms);
+                    events.Repeat(3000ms);
                     break;
                 case EVENT_MINION_MAGNETIC_PULL:
-                    events.RepeatEvent(20000ms);
+                    events.Repeat(20000ms);
                     if (pInstance)
                     {
                         if (Creature* feugen = ObjectAccessor::GetCreature(*me, pInstance->GetGuidData(DATA_FEUGEN_BOSS)))
@@ -592,7 +592,7 @@ public:
                                 int32 customTeslaShockDamage = 4374;
                                 cr->CastCustomSpell(target, SPELL_TESLA_SHOCK, &customTeslaShockDamage, 0, 0, true);
                             }
-                            events.RepeatEvent(1500ms);
+                            events.Repeat(1500ms);
                             break;
                         }
                         else
@@ -601,7 +601,7 @@ public:
                             cr->CastSpell(cr, me->GetEntry() == NPC_STALAGG_40 ? SPELL_STALAGG_CHAIN : SPELL_FEUGEN_CHAIN, false);
                         }
                     }
-                    events.RepeatEvent(5000ms);
+                    events.Repeat(5000ms);
                     break;
             }
             DoMeleeAttackIfReady();

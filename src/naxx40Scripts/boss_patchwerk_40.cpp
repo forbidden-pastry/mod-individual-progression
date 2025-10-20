@@ -158,7 +158,7 @@ public:
                             int32 dmg = urand(22100,22850);
                             me->CastCustomSpell(finalTarget, SPELL_HATEFUL_STRIKE, &dmg, 0, 0, false);
                         }
-                        events.RepeatEvent(1200ms);
+                        events.Repeat(1200ms);
                         break;
                     }
                 case EVENT_BERSERK:
@@ -168,7 +168,7 @@ public:
                     break;
                 case EVENT_SLIME_BOLT:
                     me->CastSpell(me, SPELL_SLIME_BOLT, false);
-                    events.RepeatEvent(3000ms);
+                    events.Repeat(3000ms);
                     break;
                 case EVENT_HEALTH_CHECK:
                     if (me->GetHealthPct() <= 5)
@@ -177,7 +177,7 @@ public:
                         me->CastSpell(me, SPELL_FRENZY, true);
                         break;
                     }
-                    events.RepeatEvent(1000ms);
+                    events.Repeat(1000ms);
                     break;
             }
             DoMeleeAttackIfReady();

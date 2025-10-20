@@ -555,7 +555,7 @@ public:
                             me->HandleEmoteCommand(EMOTE_ONESHOT_ATTACK_UNARMED);
                             Talk(SAY_REGINALD_SHOO_HORSE);
                             mercutio->GetMotionMaster()->MovePoint(1, -9150.777344f, 370.672607f, 90.537186f, false);
-                            mercutio->DespawnOrUnsummon(10000);
+                            mercutio->DespawnOrUnsummon(10000ms);
                         }
                         _events.ScheduleEvent(EVENT_END_INTRO, 3000ms);
                         break;
@@ -896,7 +896,7 @@ public:
                         {
                             anduinn->SetWalk(true);
                             anduinn->GetMotionMaster()->MovePoint(1, -8505.770f, 338.312f, 120.886f, true);
-                            anduinn->DespawnOrUnsummon(5000);
+                            anduinn->DespawnOrUnsummon(5000ms);
                         }
                         break;
                     case 60:
@@ -945,7 +945,7 @@ public:
                         if (Creature* onyxia = me->FindNearestCreature(NPC_LADY_ONYXIA, 20.0f))
                         {
                             onyxia->CastSpell(onyxia, 20466, true);
-                            onyxia->DespawnOrUnsummon(2000);
+                            onyxia->DespawnOrUnsummon(2000ms);
                         }
                         break;
                     case 64:
@@ -968,7 +968,7 @@ public:
                         if (!ObjectAccessor::FindPlayer(_playerGUID))
                         {
                             DoAction(ACTION_RESET_MASQUERADE);
-                            me->DespawnOrUnsummon(10000);
+                            me->DespawnOrUnsummon(10000ms);
                         }
                         break;
                     case 68:
@@ -1008,7 +1008,7 @@ public:
                                 player->GroupEventHappens(QUEST_THE_GREAT_MASQUERADE, me);
 
                             DoAction(ACTION_RESET_MASQUERADE);
-                            me->DespawnOrUnsummon(10000);
+                            me->DespawnOrUnsummon(10000ms);
                         }
                         break;
                     default:

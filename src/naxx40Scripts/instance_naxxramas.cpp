@@ -1324,17 +1324,17 @@ public:
                     if (Creature* cr = me->SummonCreature(NPC_LIVING_POISON, 3128.59, -3118.81, 293.346, 4.76754, TEMPSUMMON_TIMED_DESPAWN, 15200))
                     {
                         cr->AddUnitMovementFlag(MOVEMENTFLAG_WALKING);
-                        cr->GetMotionMaster()->MovePoint(0, 3130.322, -3156.51, 293.324, false);
+                        cr->GetMotionMaster()->MovePoint(0, 3130.322, -3156.51, 293.324, FORCED_MOVEMENT_NONE, 0.0f, 0.0f, false);
                     }
                     if (Creature* cr = me->SummonCreature(NPC_LIVING_POISON, *me, TEMPSUMMON_TIMED_DESPAWN, 14800))
                     {
                         cr->AddUnitMovementFlag(MOVEMENTFLAG_WALKING);
-                        cr->GetMotionMaster()->MovePoint(0, 3144.779, -3158.416, 293.324, false);
+                        cr->GetMotionMaster()->MovePoint(0, 3144.779, -3158.416, 293.324, FORCED_MOVEMENT_NONE, 0.0f, 0.0f, false);
                     }
                     if (Creature* cr = me->SummonCreature(NPC_LIVING_POISON, 3175.42, -3134.86, 293.34, 4.284, TEMPSUMMON_TIMED_DESPAWN, 14800))
                     {
                         cr->AddUnitMovementFlag(MOVEMENTFLAG_WALKING);
-                        cr->GetMotionMaster()->MovePoint(0, 3158.778, -3164.201, 293.312, false);
+                        cr->GetMotionMaster()->MovePoint(0, 3158.778, -3164.201, 293.312, FORCED_MOVEMENT_NONE, 0.0f, 0.0f, false);
                     }
                     timer = 0;
                 }

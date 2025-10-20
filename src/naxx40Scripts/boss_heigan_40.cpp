@@ -295,7 +295,7 @@ public:
             {
                 case EVENT_DISRUPTION:
                     me->CastCustomSpell(SPELL_DISRUPTION, SPELLVALUE_RADIUS_MOD, 2500, me, false); // 25yd
-                    events.Repeat(10000);
+                    events.Repeat(10000ms);
                     break;
                 case EVENT_DECEPIT_FEVER:
                 {
@@ -355,7 +355,7 @@ public:
                                 return;
                             }
                         }
-                        events.Repeat(5000);
+                        events.Repeat(5000ms);
                         return;
                     }
                 case EVENT_TELEPORT_PLAYER:

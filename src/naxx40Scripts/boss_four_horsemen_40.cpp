@@ -152,7 +152,7 @@ public:
             summons.DespawnAll(); // despawn spirits
             if ((me->GetEntry() != NPC_LADY_BLAUMEUX_40 && me->GetEntry() != NPC_SIR_ZELIEK_40))
             {
-                events.RescheduleEvent(EVENT_PRIMARY_SPELL, 10000ms + rand() % 5000ms);
+                events.RescheduleEvent(EVENT_PRIMARY_SPELL, Milliseconds(10000 + rand() % 5000));
             }
             else
             {

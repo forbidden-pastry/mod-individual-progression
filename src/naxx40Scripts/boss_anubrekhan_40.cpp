@@ -229,7 +229,7 @@ public:
                         int32 bp2 = IMPALE_BP2;
                         me->CastCustomSpell(target, SPELL_IMPALE, 0, &bp1, &bp2, false, nullptr, nullptr, ObjectGuid::Empty);
                     }
-                    events.RepeatEvent(20000);
+                    events.RepeatEvent(20000ms);
                     break;
                 case EVENT_LOCUST_SWARM:
                 {

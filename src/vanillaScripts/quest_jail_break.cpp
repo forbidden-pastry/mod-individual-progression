@@ -101,7 +101,7 @@ public:
             _instance = creature->GetInstanceScript();
         }
 
-        void SetGUID(ObjectGuid playerGUID, int32 /*id*/) override
+        void SetGUID(ObjectGuid playerGUID, int32 /*id*/)
         {
             _playerGUID = playerGUID;
             Start(true, false, playerGUID, 0, false, false);

@@ -186,7 +186,7 @@ public:
                 me->SetFlag(UNIT_NPC_FLAGS, UNIT_NPC_FLAG_GOSSIP | UNIT_NPC_FLAG_QUESTGIVER);
         }
 
-        void SetGUID(ObjectGuid guid, int32 index) override
+        void SetGUID(ObjectGuid guid, int32 index)
         {
             if (index == ACTION_START_ESCORT)
             {

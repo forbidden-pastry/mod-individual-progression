@@ -642,7 +642,7 @@ public:
             {
                 case EVENT_MINION_MORTAL_WOUND:
                     me->CastSpell(me->GetVictim(), SPELL_MORTAL_WOUND, false);
-                    events.RepeatEvent(15000ms);
+                    events.Repeat(15000ms);
                     break;
                 case EVENT_MINION_FRENZY:
                     if (me->HealthBelowPct(35))
@@ -650,11 +650,11 @@ public:
                         me->CastSpell(me, SPELL_FRENZY, true);
                         break;
                     }
-                    events.RepeatEvent(1000ms);
+                    events.Repeat(1000ms);
                     break;
                 case EVENT_MINION_BLOOD_TAP:
                     me->CastSpell(me->GetVictim(), SPELL_BLOOD_TAP, false);
-                    events.RepeatEvent(15000ms);
+                    events.Repeat(15000ms);
                     break;
             }
             DoMeleeAttackIfReady();

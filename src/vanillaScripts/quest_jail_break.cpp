@@ -458,7 +458,7 @@ public:
         {
             if (actionId == 0)
             {
-                Start(false, true, ObjectGuid::Empty, 0, false, false);
+                Start(false, ObjectGuid::Empty, 0, false, false);
             }
         }
     };

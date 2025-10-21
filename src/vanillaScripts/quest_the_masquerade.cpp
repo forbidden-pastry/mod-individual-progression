@@ -976,7 +976,7 @@ public:
                         {
                             bolvar->SetUInt32Value(UNIT_NPC_EMOTESTATE, 0);
                             bolvar->GetMotionMaster()->Clear();
-                            bolvar->GetMotionMaster()->MovePoint(1, -8448.279f, 338.398f, 121.329f, false);
+                            bolvar->GetMotionMaster()->MovePoint(1, -8448.279f, 338.398f, 121.329f, FORCED_MOVEMENT_NONE, 0.0f, 0.0f, false);
                             bolvar->SetFacingToObject(me);
                             bolvar->SetStandState(UNIT_STAND_STATE_KNEEL);
                         }

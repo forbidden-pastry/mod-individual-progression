@@ -221,7 +221,7 @@ public:
                 case 4:
                     me->GetMotionMaster()->Clear();
                     me->SetFacingTo(me->GetHomePosition().GetOrientation());
-                    _events.ScheduleEvent(5, 1000);
+                    _events.ScheduleEvent(5, 1000ms);
                     break;
                 default:
                     break;

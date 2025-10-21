@@ -104,7 +104,7 @@ public:
         void SetGUID(ObjectGuid playerGUID, int32 /*id*/)
         {
             _playerGUID = playerGUID;
-            Start(true, false, playerGUID, 0, false, false);
+            Start(true, playerGUID, 0, false, false);
             me->RemoveFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_IMMUNE_TO_NPC | UNIT_FLAG_IMMUNE_TO_PC);
         }
 

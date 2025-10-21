@@ -347,7 +347,7 @@ public:
             }
         }
 
-        void SetGUID(ObjectGuid guid, int32 index) override
+        void SetGUID(ObjectGuid guid, int32 index)
         {
             if (index == ACTION_START_ESCORT)
             {

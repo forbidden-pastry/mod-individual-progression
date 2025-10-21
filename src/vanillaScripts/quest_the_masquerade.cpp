@@ -1082,7 +1082,7 @@ public:
                 _inEvent = data == 1 ? true : false;
         }
 
-        void SetGUID(ObjectGuid guid, int32 /*data*/) override
+        void SetGUID(ObjectGuid guid, int32 /*data*/)
         {
             _invokerGUID = guid;
         }

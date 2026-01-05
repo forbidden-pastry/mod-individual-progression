@@ -1,29 +1,29 @@
 -- Vosur Brakthel <Journeyman Alchemist>
-UPDATE `creature_template` SET `subname`='Journeyman Alchemist', `npcflag`=81, `trainer_type`=2 WHERE `entry`=1246;
+UPDATE `creature_template` SET `subname`='Journeyman Alchemist', `npcflag`=81 WHERE `entry`=1246;
 
 -- Groum Stonebeard <Journeyman Blacksmith>
-UPDATE `creature_template` SET `subname`='Journeyman Blacksmith', `npcflag`=81, `trainer_type`=2 WHERE `entry`=10277;
+UPDATE `creature_template` SET `subname`='Journeyman Blacksmith', `npcflag`=81 WHERE `entry`=10277;
 
 -- Rotgath Stonebeard <Expert Blacksmith>
-UPDATE `creature_template` SET `subname`='Expert Blacksmith', `npcflag`=81, `trainer_type`=2, `type_flags`=134217728 WHERE `entry`=10276;
+UPDATE `creature_template` SET `subname`='Expert Blacksmith', `npcflag`=81, `type_flags`=134217728 WHERE `entry`=10276;
 
 -- Thonys Pillarstone <Journeyman Enchanter>
-UPDATE `creature_template` SET `subname`='Journeyman Enchanter', `npcflag`=81, `trainer_type`=2 WHERE `entry`=11065;
+UPDATE `creature_template` SET `subname`='Journeyman Enchanter', `npcflag`=81 WHERE `entry`=11065;
 
 -- Gimble Thistlefuzz <Expert Enchanter>
 UPDATE `creature_template` SET `type_flags`=134217728 WHERE `entry`=5157;
 
 -- Jemma Quikswitch <Journeyman Engineer>
-UPDATE `creature_template` SET `subname`='Journeyman Engineer', `npcflag`=81, `trainer_type`=2 WHERE `entry`=11028;
+UPDATE `creature_template` SET `subname`='Journeyman Engineer', `npcflag`=81 WHERE `entry`=11028;
 
 -- Trixie Quikswitch <Expert Engineer>
-UPDATE `creature_template` SET `subname`='Journeyman Engineer', `npcflag`=81, `trainer_type`=2, `type_flags`=134217728 WHERE `entry`=11029;
+UPDATE `creature_template` SET `subname`='Journeyman Engineer', `npcflag`=81, `type_flags`=134217728 WHERE `entry`=11029;
 
 -- Gretta Finespindle <Journeyman Leatherworker>
-UPDATE `creature_template` SET `subname`='Journeyman Leatherworker', `npcflag`=81, `trainer_type`=2 WHERE `entry`=1466;
+UPDATE `creature_template` SET `subname`='Journeyman Leatherworker', `npcflag`=81 WHERE `entry`=1466;
 
 -- Uthrar Threx <Journeyman Tailor>
-UPDATE `creature_template` SET `subname`='Journeyman Tailor', `npcflag`=81, `trainer_type`=2 WHERE `entry`=1703;
+UPDATE `creature_template` SET `subname`='Journeyman Tailor', `npcflag`=81  WHERE `entry`=1703;
 
 
 -- Vosur Brakthel <Journeyman Alchemist>

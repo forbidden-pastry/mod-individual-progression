@@ -1,26 +1,26 @@
 -- Doctor Martin Felben <Journeyman Alchemist Trainer>
-UPDATE `creature_template` SET `subname`='Journeyman Alchemist Trainer', `npcflag`=81, `trainer_type`=2 WHERE `entry`=11044;
+UPDATE `creature_template` SET `subname`='Journeyman Alchemist Trainer', `npcflag`=81 WHERE `entry`=11044;
 
 -- Doctor Marsh <Expert Alchemist>
-UPDATE `creature_template` SET `subname`='Expert Alchemist', `npcflag`=81, `trainer_type`=2, `type_flags`=134217728 WHERE `entry`=4609;
+UPDATE `creature_template` SET `subname`='Expert Alchemist', `npcflag`=81, `type_flags`=134217728 WHERE `entry`=4609;
 
 -- Basil Frye <Journeyman Blacksmith>
-UPDATE `creature_template` SET `subname`='Journeyman Blacksmith', `npcflag`=81, `trainer_type`=2 WHERE `entry`=4605;
+UPDATE `creature_template` SET `subname`='Journeyman Blacksmith', `npcflag`=81 WHERE `entry`=4605;
 
 -- Malcomb Wynn <Journeyman Enchanter>
-UPDATE `creature_template` SET `subname`='Journeyman Enchanter', `npcflag`=81, `trainer_type`=2 WHERE `entry`=11067;
+UPDATE `creature_template` SET `subname`='Journeyman Enchanter', `npcflag`=81 WHERE `entry`=11067;
 
 -- Graham Van Talen <Journeyman Engineer>
-UPDATE `creature_template` SET `subname`='Journeyman Engineer', `npcflag`=83, `trainer_type`=2 WHERE `entry`=4586;
+UPDATE `creature_template` SET `subname`='Journeyman Engineer', `npcflag`=83 WHERE `entry`=4586;
 
 -- Dan Golthas <Journeyman Leatherworker>
-UPDATE `creature_template` SET `subname`='Journeyman Leatherworker', `npcflag`=81, `trainer_type`=2 WHERE `entry`=223;
+UPDATE `creature_template` SET `subname`='Journeyman Leatherworker', `npcflag`=81 WHERE `entry`=223;
 
 -- Victor Ward <Journeyman Tailor>
-UPDATE `creature_template` SET `subname`='Journeyman Tailor', `npcflag`=81, `trainer_type`=2 WHERE `entry`=11048;
+UPDATE `creature_template` SET `subname`='Journeyman Tailor', `npcflag`=81 WHERE `entry`=11048;
 
 -- Rhiannon Davis <Expert Tailor>
-UPDATE `creature_template` SET `subname`='Expert Tailor', `npcflag`=81, `trainer_type`=2, `type_flags`=134217728 WHERE `entry`=11049;
+UPDATE `creature_template` SET `subname`='Expert Tailor', `npcflag`=81, `type_flags`=134217728 WHERE `entry`=11049;
 
 
 -- Doctor Martin Felben <Journeyman Alchemist Trainer>

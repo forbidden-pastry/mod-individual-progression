@@ -8,7 +8,7 @@ UPDATE `creature_template` SET `subname`='Expert Tailor', `type_flags`=134217728
 UPDATE `creature_template` SET `subname`='Artisan Leatherworker', `type_flags`=134217728 WHERE `entry`=3007;
 
 -- Mak <Journeyman Leatherworker>
-UPDATE `creature_template` SET `subname`='Journeyman Leatherworker', `npcflag`=81, `trainer_type`=2 WHERE `entry`=3008;
+UPDATE `creature_template` SET `subname`='Journeyman Leatherworker', `npcflag`=81 WHERE `entry`=3008;
 
 -- Bena Winterhoof <Expert Alchemist>
 UPDATE `creature_template` SET `subname`='Expert Alchemist', `type_flags`=134217728 WHERE `entry`=3009;
@@ -17,19 +17,19 @@ UPDATE `creature_template` SET `subname`='Expert Alchemist', `type_flags`=134217
 UPDATE `creature_template` SET `subname`='Expert Enchanter', `type_flags`=134217728 WHERE `entry`=3011;
 
 -- Thrag Stonehoof <Journeyman Blacksmith>
-UPDATE `creature_template` SET `subname`='Journeyman Blacksmith', `npcflag`=81, `trainer_type`=2 WHERE `entry`=10278;
+UPDATE `creature_template` SET `subname`='Journeyman Blacksmith', `npcflag`=81 WHERE `entry`=10278;
 
 -- Kray <Journeyman Alchemist>
-UPDATE `creature_template` SET `subname`='Journeyman Alchemist', `npcflag`=81, `trainer_type`=2 WHERE `entry`=11047;
+UPDATE `creature_template` SET `subname`='Journeyman Alchemist', `npcflag`=81 WHERE `entry`=11047;
 
 -- Vhan <Journeyman Tailor>
-UPDATE `creature_template` SET `subname`='Journeyman Tailor', `npcflag`=81, `trainer_type`=2 WHERE `entry`=11051;
+UPDATE `creature_template` SET `subname`='Journeyman Tailor', `npcflag`=81 WHERE `entry`=11051;
 
 -- Mot Dawnstrider <Journeyman Enchanter>
-UPDATE `creature_template` SET `subname`='Journeyman Enchanter', `npcflag`=81, `trainer_type`=2 WHERE `entry`=11071;
+UPDATE `creature_template` SET `subname`='Journeyman Enchanter', `npcflag`=81 WHERE `entry`=11071;
 
 -- Tarn <Expert Leatherworker>
-UPDATE `creature_template` SET `subname`='Expert Leatherworker', `npcflag`=81, `trainer_type`=2, `type_flags`=134217728 WHERE `entry`=11084;
+UPDATE `creature_template` SET `subname`='Expert Leatherworker', `npcflag`=81, `type_flags`=134217728 WHERE `entry`=11084;
 
 
 -- Pand Stonebinder <First Aid Trainer>

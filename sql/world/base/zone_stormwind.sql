@@ -1,20 +1,20 @@
 -- Dane Lindgren <Apprentice Blacksmith>
-UPDATE `creature_template` SET `subname`='Journeyman Blacksmith', `npcflag`=81, `trainer_type`=2 WHERE `entry`=957;
+UPDATE `creature_template` SET `subname`='Journeyman Blacksmith', `npcflag`=81 WHERE `entry`=957;
 
 -- Betty Quin <Apprentice Enchanter>
-UPDATE `creature_template` SET `subname`='Journeyman Enchanter', `npcflag`=81, `trainer_type`=2 WHERE `entry`=11068;
+UPDATE `creature_template` SET `subname`='Journeyman Enchanter', `npcflag`=81 WHERE `entry`=11068;
 
 -- Lucan Cordell <Enchanting Trainer>
 UPDATE `creature_template` SET `subname`='Expert Enchanter' WHERE `entry`=1317;
 
 -- Sprite Jumpsprocket <Apprentice Engineer>
-UPDATE `creature_template` SET `subname`='Journeyman Engineer', `npcflag`=81, `trainer_type`=2 WHERE `entry`=11026;
+UPDATE `creature_template` SET `subname`='Journeyman Engineer', `npcflag`=81 WHERE `entry`=11026;
 
 -- Randal Worth <Apprentice Leatherworker>
-UPDATE `creature_template` SET `subname`='Journeyman Leatherworker', `npcflag`=81, `trainer_type`=2 WHERE `entry`=11096;
+UPDATE `creature_template` SET `subname`='Journeyman Leatherworker', `npcflag`=81 WHERE `entry`=11096;
 
 -- Lawrence Schneider <Apprentice Tailor>
-UPDATE `creature_template` SET `subname`='Journeyman Tailor', `npcflag`=81, `trainer_type`=2 WHERE `entry`=1300;
+UPDATE `creature_template` SET `subname`='Journeyman Tailor', `npcflag`=81 WHERE `entry`=1300;
 
 -- Sellandus <Expert Tailor>
 UPDATE `creature_template` SET `type_flags`=134217728 WHERE `entry`=5567;

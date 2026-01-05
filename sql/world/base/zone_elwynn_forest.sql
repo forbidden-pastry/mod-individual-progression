@@ -55,7 +55,7 @@ UPDATE `creature_template` SET `subname`='Tabard Vendor' WHERE `entry`=5193;
 UPDATE `creature_template` SET `subname`='Expert Alchemist' WHERE `entry`=5499;
 
 -- Tel'Athir <Apprentice Alchemist>
-UPDATE `creature_template` SET `subname`='Journeyman Alchemist', `npcflag`=81, `trainer_type`=2 WHERE `entry`=5500;
+UPDATE `creature_template` SET `subname`='Journeyman Alchemist', `npcflag`=81 WHERE `entry`=5500;
 
 -- Eldraeith <Herbalism Supplies>
 UPDATE `creature_template` SET `subname`='Herbalism Supplier' WHERE `entry`=5503;
@@ -70,7 +70,7 @@ UPDATE `creature_template` SET `subname`='Expert Engineer' WHERE `entry`=5518;
 UPDATE `creature_template` SET `subname`='Expert Leatherworker' WHERE `entry`=5564;
 
 -- Sellandus <Apprentice Tailor>
-UPDATE `creature_template` SET `subname`='Expert Tailor', `npcflag`=81, `trainer_type`=2 WHERE `entry`=5567;
+UPDATE `creature_template` SET `subname`='Expert Tailor', `npcflag`=81 WHERE `entry`=5567;
 
 -- Helene Peltskinner <Skinner>
 UPDATE `creature_template` SET `subname`='Skinner' WHERE `entry`=6306;

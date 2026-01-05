@@ -1,5 +1,5 @@
 -- Whuut <Journeyman Alchemist>
-UPDATE `creature_template` SET `subname`='Journeyman Alchemist', `npcflag`=81, `trainer_type`=2 WHERE `entry`=11046;
+UPDATE `creature_template` SET `subname`='Journeyman Alchemist', `npcflag`=81, WHERE `entry`=11046;
 
 -- Yelmak <Expert Alchemist>
 UPDATE `creature_template` SET `subname`='Expert Alchemist' WHERE `entry`=3347;
@@ -11,37 +11,37 @@ UPDATE `creature_template` SET `subname`='Armor Crafter' WHERE `entry`=7230;
 UPDATE `creature_template` SET `subname`='Weapon Crafter' WHERE `entry`=7231;
 
 -- Ug'thok <Journeyman Blacksmith>
-UPDATE `creature_template` SET `subname`='Journeyman Blacksmith', `npcflag`=81, `trainer_type`=2 WHERE `entry`=10266;
+UPDATE `creature_template` SET `subname`='Journeyman Blacksmith', `npcflag`=81, WHERE `entry`=10266;
 
 -- Snarl <Expert Blacksmith>
-UPDATE `creature_template` SET `subname`='Expert Blacksmith', `npcflag`=81, `trainer_type`=2, `type_flags`=134217728 WHERE `entry`=1383;
+UPDATE `creature_template` SET `subname`='Expert Blacksmith', `npcflag`=81, `type_flags`=134217728 WHERE `entry`=1383;
 
 -- Saru Steelfury <Artisan Blacksmith>
 UPDATE `creature_template` SET `subname`='Artisan Blacksmith' WHERE `entry`=3355;
 
 -- Jhag <Journeyman Enchanter>
-UPDATE `creature_template` SET `subname`='Journeyman Enchanter', `npcflag`=81, `trainer_type`=2 WHERE `entry`=11066;
+UPDATE `creature_template` SET `subname`='Journeyman Enchanter', `npcflag`=81, WHERE `entry`=11066;
 
 -- Godan <Expert Enchanter>
 UPDATE `creature_template` SET `subname`='Expert Enchanter' WHERE `entry`=3345;
 
 -- Thund <Journeyman Engineer>
-UPDATE `creature_template` SET `subname`='Journeyman Engineer', `npcflag`=81, `trainer_type`=2 WHERE `entry`=2857;
+UPDATE `creature_template` SET `subname`='Journeyman Engineer', `npcflag`=81, WHERE `entry`=2857;
 
 -- Nogg <Expert Engineer>
-UPDATE `creature_template` SET `subname`='Expert Engineer', `npcflag`=81, `trainer_type`=2, `type_flags`=134217728 WHERE `entry`=3412;
+UPDATE `creature_template` SET `subname`='Expert Engineer', `npcflag`=81, `type_flags`=134217728 WHERE `entry`=3412;
 
 -- Roxxik <Artisan Engineer>
-UPDATE `creature_template` SET `subname`='Artisan Engineer', `npcflag`=81, `trainer_type`=2, `type_flags`=134217728 WHERE `entry`=11017;
+UPDATE `creature_template` SET `subname`='Artisan Engineer', `npcflag`=81, `type_flags`=134217728 WHERE `entry`=11017;
 
 -- Kamari <Journeyman Leatherworker>
-UPDATE `creature_template` SET `subname`='Journeyman Leatherworker', `npcflag`=81, `trainer_type`=2 WHERE `entry`=5811;
+UPDATE `creature_template` SET `subname`='Journeyman Leatherworker', `npcflag`=81 WHERE `entry`=5811;
 
 -- Karolek <Expert Leatherworker>
 UPDATE `creature_template` SET `subname`='Expert Leatherworker' WHERE `entry`=3365;
 
 -- Snang <Journeyman Tailor>
-UPDATE `creature_template` SET `subname`='Journeyman Tailor', `npcflag`=81, `trainer_type`=2 WHERE `entry`=2855;
+UPDATE `creature_template` SET `subname`='Journeyman Tailor', `npcflag`=81 WHERE `entry`=2855;
 
 -- Magar <Expert Tailor>
 UPDATE `creature_template` SET `subname`='Expert Tailor' WHERE `entry`=3363;

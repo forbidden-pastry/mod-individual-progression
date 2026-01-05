@@ -1,5 +1,5 @@
 -- Whuut <Journeyman Alchemist>
-UPDATE `creature_template` SET `subname`='Journeyman Alchemist', `npcflag`=81, WHERE `entry`=11046;
+UPDATE `creature_template` SET `subname`='Journeyman Alchemist', `npcflag`=81 WHERE `entry`=11046;
 
 -- Yelmak <Expert Alchemist>
 UPDATE `creature_template` SET `subname`='Expert Alchemist' WHERE `entry`=3347;
@@ -26,7 +26,7 @@ UPDATE `creature_template` SET `subname`='Journeyman Enchanter', `npcflag`=81, W
 UPDATE `creature_template` SET `subname`='Expert Enchanter' WHERE `entry`=3345;
 
 -- Thund <Journeyman Engineer>
-UPDATE `creature_template` SET `subname`='Journeyman Engineer', `npcflag`=81, WHERE `entry`=2857;
+UPDATE `creature_template` SET `subname`='Journeyman Engineer', `npcflag`=81 WHERE `entry`=2857;
 
 -- Nogg <Expert Engineer>
 UPDATE `creature_template` SET `subname`='Expert Engineer', `npcflag`=81, `type_flags`=134217728 WHERE `entry`=3412;

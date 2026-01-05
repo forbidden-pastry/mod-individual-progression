@@ -11,7 +11,7 @@ UPDATE `creature_template` SET `subname`='Armor Crafter' WHERE `entry`=7230;
 UPDATE `creature_template` SET `subname`='Weapon Crafter' WHERE `entry`=7231;
 
 -- Ug'thok <Journeyman Blacksmith>
-UPDATE `creature_template` SET `subname`='Journeyman Blacksmith', `npcflag`=81, WHERE `entry`=10266;
+UPDATE `creature_template` SET `subname`='Journeyman Blacksmith', `npcflag`=81 WHERE `entry`=10266;
 
 -- Snarl <Expert Blacksmith>
 UPDATE `creature_template` SET `subname`='Expert Blacksmith', `npcflag`=81, `type_flags`=134217728 WHERE `entry`=1383;
@@ -20,7 +20,7 @@ UPDATE `creature_template` SET `subname`='Expert Blacksmith', `npcflag`=81, `typ
 UPDATE `creature_template` SET `subname`='Artisan Blacksmith' WHERE `entry`=3355;
 
 -- Jhag <Journeyman Enchanter>
-UPDATE `creature_template` SET `subname`='Journeyman Enchanter', `npcflag`=81, WHERE `entry`=11066;
+UPDATE `creature_template` SET `subname`='Journeyman Enchanter', `npcflag`=81 WHERE `entry`=11066;
 
 -- Godan <Expert Enchanter>
 UPDATE `creature_template` SET `subname`='Expert Enchanter' WHERE `entry`=3345;

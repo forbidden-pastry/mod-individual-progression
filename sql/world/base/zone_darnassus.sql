@@ -1,23 +1,23 @@
 -- Milla Fairancora <Journeyman Alchemist>
-UPDATE `creature_template` SET `subname`='Journeyman Alchemist', `npcflag`=81, `trainer_type`=2 WHERE `entry`=11041;
+UPDATE `creature_template` SET `subname`='Journeyman Alchemist', `npcflag`=81 WHERE `entry`=11041;
 
 -- Sylvanna Forestmoon <Expert Alchemist>
-UPDATE `creature_template` SET `subname`='Expert Alchemist', `npcflag`=81, `trainer_type`=2, `type_flags`=134217728 WHERE `entry`=11042;
+UPDATE `creature_template` SET `subname`='Expert Alchemist', `npcflag`=81, `type_flags`=134217728 WHERE `entry`=11042;
 
 -- Lalina Summermoon <Journeyman Enchanter>
-UPDATE `creature_template` SET `subname`='Journeyman Enchanter', `npcflag`=81, `trainer_type`=2 WHERE `entry`=11070;
+UPDATE `creature_template` SET `subname`='Journeyman Enchanter', `npcflag`=81 WHERE `entry`=11070;
 
 -- Darianna <Journeyman Leatherworker>
-UPDATE `creature_template` SET `subname`='Journeyman Leatherworker', `npcflag`=81, `trainer_type`=2 WHERE `entry`=11083;
+UPDATE `creature_template` SET `subname`='Journeyman Leatherworker', `npcflag`=81 WHERE `entry`=11083;
 
 -- Faldron <Expert Leatherworker>
-UPDATE `creature_template` SET `subname`='Journeyman Leatherworker', `npcflag`=81, `trainer_type`=2, `type_flags`=134217728 WHERE `entry`=11081;
+UPDATE `creature_template` SET `subname`='Journeyman Leatherworker', `npcflag`=81, `type_flags`=134217728 WHERE `entry`=11081;
 
 -- Telonis <Artisan Leatherworker>
 UPDATE `creature_template` SET `type_flags`=134217728 WHERE `entry`=4212;
 
 -- Trianna <Journeyman Tailor>
-UPDATE `creature_template` SET `subname`='Journeyman Tailor', `npcflag`=81, `trainer_type`=2 WHERE `entry`=11050;
+UPDATE `creature_template` SET `subname`='Journeyman Tailor', `npcflag`=81 WHERE `entry`=11050;
 
 
 -- Milla Fairancora <Journeyman Alchemist>

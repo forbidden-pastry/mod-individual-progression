@@ -455,6 +455,7 @@ public:
                     events.Repeat(15s);
                     break;
                 case EVENT_TELEPORT:
+                {
                     me->AttackStop();
                     if (IN_LIVE_SIDE(me))
                     {
@@ -483,6 +484,7 @@ public:
                     }
                     events.Repeat(20s);
                     break;
+                }
                 case EVENT_CHECK_HEALTH:
                     if (me->HealthBelowPct(30) && pInstance)
                     {

@@ -122,7 +122,7 @@ public:
                         for (auto i = threatList.begin(); i != threatList.end(); ++i, ++counter)
                         {
                             // Gather all units with melee range
-                            Unit* target = (*i)->getTarget();
+                            Unit* target = (*i)->GetVictim();
                             if (me->IsWithinMeleeRange(target))
                             {
                                 meleeRangeTargets.push_back(target);

@@ -261,7 +261,7 @@ INSERT INTO `creature_queststarter` (`id`, `quest`) VALUES (3326, 8419);
 UPDATE `creature_template` SET `subname`='King of Darkspear Trolls', `minlevel`=60, `maxlevel`=60 WHERE `entry`=10540;
 
 -- Nazgrel <Advisor to Thrall>
-UPDATE `creature_template` SET `scale`=0.7, `npcflag`=2, `faction`=29, `gossip_menu_id`=0 WHERE `entry`=3230;
+UPDATE `creature_template` SET `npcflag`=2, `faction`=29, `gossip_menu_id`=0 WHERE `entry`=3230;
 
 -- Orgrimmar Grunt
 UPDATE `creature_template` SET `minlevel`=55, `maxlevel`=55 WHERE `entry`=3296;

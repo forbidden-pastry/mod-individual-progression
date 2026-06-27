@@ -159,20 +159,20 @@ INSERT INTO `conditions` (`SourceTypeOrReferenceId`, `SourceGroup`, `SourceEntry
 
 
 -- Taim Ragetotem
-DELETE FROM `creature` WHERE `id1`=7427;
-INSERT INTO `creature` (`id1`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`) VALUES (7427, 1, -1384.29, -98.6163, 159.018, 2.87979, 300);
+DELETE FROM `creature` WHERE `id`=7427;
+INSERT INTO `creature` (`id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`) VALUES (7427, 1, -1384.29, -98.6163, 159.018, 2.87979, 300);
 
 -- Kergul Bloodaxe <Warsong Gulch Battlemaster>
-DELETE FROM `creature` WHERE `id1`=10360;
-INSERT INTO `creature` (`id1`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`) VALUES (10360, 1, -1381.29, -75.9809, 160.602, 3.19395, 300);
+DELETE FROM `creature` WHERE `id`=10360;
+INSERT INTO `creature` (`id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`) VALUES (10360, 1, -1381.29, -75.9809, 160.602, 3.19395, 300);
 
 -- Martin Lindsey <Arathi Basin Battlemaster>
-DELETE FROM `creature` WHERE `id1`=12198;
-INSERT INTO `creature` (`id1`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`) VALUES (12198, 1, -995.143, 217.173, 104.729, 4.46804, 500);
+DELETE FROM `creature` WHERE `id`=12198;
+INSERT INTO `creature` (`id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`) VALUES (12198, 1, -995.143, 217.173, 104.729, 4.46804, 500);
 
 -- Remove WotLK Battlemasters
-DELETE FROM `creature` WHERE `id1`=34978;
-DELETE FROM `creature` WHERE `id1`=34976;
+DELETE FROM `creature` WHERE `id`=34978;
+DELETE FROM `creature` WHERE `id`=34976;
 
 -- Hunter Sagewind
 UPDATE `creature_template` SET `minlevel`=60, `maxlevel`=60 WHERE `entry`=14440;

@@ -1,7 +1,7 @@
 
 -- Undertaker Mordo
-DELETE FROM `creature` WHERE `id1`=1568;
-INSERT INTO `creature` (`id1`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`) VALUES (1568, 0, 1678.99, 1667.86, 135.855, 3.76991, 300);
+DELETE FROM `creature` WHERE `id`=1568;
+INSERT INTO `creature` (`id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`) VALUES (1568, 0, 1678.99, 1667.86, 135.855, 3.76991, 300);
 
 -- Piercing the Veil (Warlock)
 DELETE FROM `creature_questender` WHERE `id`=5667 AND `quest`=1470;

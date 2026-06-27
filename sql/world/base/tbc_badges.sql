@@ -64,8 +64,8 @@ UPDATE `creature_template` SET `ScriptName` = 'npc_ipp_tbc_t4' WHERE `entry` = 1
 UPDATE `creature_template` SET `ScriptName` = 'npc_ipp_tbc_pre_t4', `flags_extra` = 2, `MovementType` = 1, `unit_flags` = 256, `npcflag` = 128, `name` = "G'eras" WHERE `entry` = 30201;
 
 DELETE FROM `creature` WHERE `guid`=350994;
-INSERT INTO `creature` (`guid`, `id1`, `id2`, `id3`, `map`, `zoneId`, `areaId`, `spawnMask`, `phaseMask`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `wander_distance`, `currentwaypoint`, `curhealth`, `curmana`, `MovementType`, `npcflag`, `unit_flags`, `dynamicflags`, `ScriptName`, `VerifiedBuild`) VALUES
-(350994, 30201, 0, 0, 530, 0, 0, 1, 1, 0, -1841.98, 5471.1, 1.01826, 4.39823, 180, 0, 0, 7380, 0, 0, 0, 0, 0, '', 0);
+INSERT INTO `creature` (`guid`, `id`, `map`, `zoneId`, `areaId`, `spawnMask`, `phaseMask`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `wander_distance`, `currentwaypoint`, `curhealth`, `curmana`, `MovementType`, `npcflag`, `unit_flags`, `dynamicflags`, `ScriptName`, `VerifiedBuild`) VALUES
+(350994, 30201, 530, 0, 0, 1, 1, 0, -1841.98, 5471.1, 1.01826, 4.39823, 180, 0, 0, 7380, 0, 0, 0, 0, 0, '', 0);
 
 /* G'eras only has a few 2.4 items - move them to the 2.4 Badge Vendor */
 UPDATE `npc_vendor` SET `entry` = 25046 WHERE `item` IN (35326, 35324, 35321);

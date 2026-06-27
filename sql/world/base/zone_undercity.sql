@@ -112,7 +112,7 @@ INSERT INTO `npc_trainer` (`ID`, `SpellID`) VALUES (4591, -350000);
 
 
 /* Replace orc guards with pre-wrathgate abomination guards */
-UPDATE `creature` SET `id1`=5624, `equipment_id`=0 WHERE `id1`=36213;
+UPDATE `creature` SET `id`=5624, `equipment_id`=0 WHERE `id`=36213;
 
 DELETE FROM `gossip_menu_option` WHERE (`MenuID`) IN (2847, 2848, 2849);
 INSERT INTO `gossip_menu_option` (`MenuID`, `OptionID`, `OptionIcon`, `OptionText`, `OptionBroadcastTextID`, `OptionType`, `OptionNpcFlag`, `ActionMenuID`, `ActionPoiID`, `BoxCoded`, `BoxMoney`, `BoxText`, `BoxBroadcastTextID`, `VerifiedBuild`) VALUES
@@ -172,7 +172,7 @@ UPDATE `quest_template` SET `RewardNextQuest` = 1899 WHERE `ID` = 1898;
 UPDATE `quest_template` SET `RewardNextQuest` = 1978 WHERE `ID` = 1899;
 
 /* Restore Varimathras */
-UPDATE `creature` SET `id1`=2425, `equipment_id`=0 WHERE `id1`=36273;
+UPDATE `creature` SET `id`=2425, `equipment_id`=0 WHERE `id`=36273;
 
 /* Restore correct quests for Varimathras */
 DELETE FROM `disables` WHERE `sourceType` = 1 AND `entry` IN (550, 6522, 6521, 1048, 5725);

@@ -873,7 +873,7 @@ INSERT INTO `npc_trainer` (`ID`, `SpellID`, `MoneyCost`, `ReqSkillLine`, `ReqSki
 
 
 -- Optional - delete TBC trainers added in WotLK 3.1
-DELETE FROM creature WHERE `id1` IN (33676,
+DELETE FROM creature WHERE `id` IN (33676,
                                      33680,
                                      33682,
                                      33674,
@@ -937,7 +937,7 @@ INSERT INTO npc_vendor (entry, slot, item) VALUES
 
 
 -- Delete added riding trainers
-DELETE FROM creature WHERE `id1` IN (35093, 35100);
+DELETE FROM creature WHERE `id` IN (35093, 35100);
 DELETE FROM creature_addon WHERE `guid` IN (88165, 88166);
 
 -- Remove TBC Gems from Prospecting Vanilla ore
@@ -1003,9 +1003,9 @@ DELETE FROM `creature_template_model` WHERE `CreatureID` = @Darmari;
 INSERT INTO `creature_template_model` (`CreatureID`, `Idx`, `CreatureDisplayID`, `DisplayScale`, `Probability`, `VerifiedBuild`) VALUES (@Darmari, 0, 18630, 1, 1, 12340);
 
 /* Add copy of Darmari to creature */
-DELETE FROM `creature` WHERE `id1` = @Darmari;
-INSERT INTO `creature` (`guid`, `id1`, `id2`, `id3`, `map`, `zoneId`, `areaId`, `spawnMask`, `phaseMask`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `wander_distance`, `currentwaypoint`, `curhealth`, `curmana`, `MovementType`, `npcflag`, `unit_flags`, `dynamicflags`, `ScriptName`, `VerifiedBuild`, `CreateObject`, `Comment`) 
-VALUES (619187, @Darmari, 0, 0, 530, 0, 0, 1, 1, 1, -2060.92, 5256.68, -38.3819, 0.767945, 300, 0, 0, 3498, 0, 0, 0, 0, 0, '', 0, 0, NULL);
+DELETE FROM `creature` WHERE `id` = @Darmari;
+INSERT INTO `creature` (`guid`, `id`, `map`, `zoneId`, `areaId`, `spawnMask`, `phaseMask`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `wander_distance`, `currentwaypoint`, `curhealth`, `curmana`, `MovementType`, `npcflag`, `unit_flags`, `dynamicflags`, `ScriptName`, `VerifiedBuild`, `CreateObject`, `Comment`) 
+VALUES (619187, @Darmari, 530, 0, 0, 1, 1, 1, -2060.92, 5256.68, -38.3819, 0.767945, 300, 0, 0, 3498, 0, 0, 0, 0, 0, '', 0, 0, NULL);
 
 /* Add copy of Darmari to creature_equip_template */
 DELETE FROM `creature_equip_template` WHERE `CreatureID` = @Darmari;
@@ -1047,9 +1047,9 @@ DELETE FROM `creature_template_model` WHERE `CreatureID` = @Barim;
 INSERT INTO `creature_template_model` (`CreatureID`, `Idx`, `CreatureDisplayID`, `DisplayScale`, `Probability`, `VerifiedBuild`) VALUES (@Barim, 0, 18176, 1, 1, 12340);
 
 /* Add copy of Barim to creature */
-DELETE FROM `creature` WHERE `id1` = @Barim;
-INSERT INTO `creature` (`guid`, `id1`, `id2`, `id3`, `map`, `zoneId`, `areaId`, `spawnMask`, `phaseMask`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `wander_distance`, `currentwaypoint`, `curhealth`, `curmana`, `MovementType`, `npcflag`, `unit_flags`, `dynamicflags`, `ScriptName`, `VerifiedBuild`, `CreateObject`, `Comment`) 
-VALUES (618754, @Barim, 0, 0, 530, 0, 0, 1, 1, 1, 148.588, 2636.02, 86.018, 1.27409, 300, 0, 0, 3113, 0, 0, 0, 0, 0, '', 0, 0, NULL);
+DELETE FROM `creature` WHERE `id` = @Barim;
+INSERT INTO `creature` (`guid`, `id`, `map`, `zoneId`, `areaId`, `spawnMask`, `phaseMask`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `wander_distance`, `currentwaypoint`, `curhealth`, `curmana`, `MovementType`, `npcflag`, `unit_flags`, `dynamicflags`, `ScriptName`, `VerifiedBuild`, `CreateObject`, `Comment`) 
+VALUES (618754, @Barim, 530, 0, 0, 1, 1, 1, 148.588, 2636.02, 86.018, 1.27409, 300, 0, 0, 3113, 0, 0, 0, 0, 0, '', 0, 0, NULL);
 
 /* Add copy of Barim to creature_equip_template */
 DELETE FROM `creature_equip_template` WHERE `CreatureID` = @Barim;
@@ -1099,9 +1099,9 @@ DELETE FROM `creature_template_model` WHERE `CreatureID` = @Brumman;
 INSERT INTO `creature_template_model` (`CreatureID`, `Idx`, `CreatureDisplayID`, `DisplayScale`, `Probability`, `VerifiedBuild`) VALUES (@Brumman, 0, 18177, 1, 1, 12340);
 
 /* Add copy of Brumman to creature */
-DELETE FROM `creature` WHERE `id1` = @Brumman;
-INSERT INTO `creature` (`guid`, `id1`, `id2`, `id3`, `map`, `zoneId`, `areaId`, `spawnMask`, `phaseMask`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `wander_distance`, `currentwaypoint`, `curhealth`, `curmana`, `MovementType`, `npcflag`, `unit_flags`, `dynamicflags`, `ScriptName`, `VerifiedBuild`, `CreateObject`, `Comment`) 
-VALUES (618771, @Brumman, 0, 0, 530, 0, 0, 1, 1, 1, -721.657, 2745.26, 94.0548, 3.45575, 300, 0, 0, 3113, 0, 0, 0, 0, 0, '', 0, 0, NULL);
+DELETE FROM `creature` WHERE `id` = @Brumman;
+INSERT INTO `creature` (`guid`, `id`, `map`, `zoneId`, `areaId`, `spawnMask`, `phaseMask`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `wander_distance`, `currentwaypoint`, `curhealth`, `curmana`, `MovementType`, `npcflag`, `unit_flags`, `dynamicflags`, `ScriptName`, `VerifiedBuild`, `CreateObject`, `Comment`) 
+VALUES (618771, @Brumman, 530, 0, 0, 1, 1, 1, -721.657, 2745.26, 94.0548, 3.45575, 300, 0, 0, 3113, 0, 0, 0, 0, 0, '', 0, 0, NULL);
 
 /* Add copy of Brumman to creature_equip_template */
 DELETE FROM `creature_equip_template` WHERE `CreatureID` = @Brumman;
@@ -1151,9 +1151,9 @@ DELETE FROM `creature_template_model` WHERE `CreatureID` = @Grikka;
 INSERT INTO `creature_template_model` (`CreatureID`, `Idx`, `CreatureDisplayID`, `DisplayScale`, `Probability`, `VerifiedBuild`) VALUES (@Grikka, 0, 20059, 1, 1, 12340);
 
 /* Add copy of Grikka to creature */
-DELETE FROM `creature` WHERE `id1` = @Grikka;
-INSERT INTO `creature` (`guid`, `id1`, `id2`, `id3`, `map`, `zoneId`, `areaId`, `spawnMask`, `phaseMask`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `wander_distance`, `currentwaypoint`, `curhealth`, `curmana`, `MovementType`, `npcflag`, `unit_flags`, `dynamicflags`, `ScriptName`, `VerifiedBuild`, `CreateObject`, `Comment`) 
-VALUES (621087, @Grikka, 0, 0, 530, 0, 0, 1, 1, 0, 2039.82, 4675.43, 150.074, 0.977384, 300, 0, 0, 3815, 0, 0, 0, 0, 0, '', 0, 0, NULL);
+DELETE FROM `creature` WHERE `id` = @Grikka;
+INSERT INTO `creature` (`guid`, `id`, `map`, `zoneId`, `areaId`, `spawnMask`, `phaseMask`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `wander_distance`, `currentwaypoint`, `curhealth`, `curmana`, `MovementType`, `npcflag`, `unit_flags`, `dynamicflags`, `ScriptName`, `VerifiedBuild`, `CreateObject`, `Comment`) 
+VALUES (621087, @Grikka, 530, 0, 0, 1, 1, 0, 2039.82, 4675.43, 150.074, 0.977384, 300, 0, 0, 3815, 0, 0, 0, 0, 0, '', 0, 0, NULL);
 
 /* Add correct leatherworking recipes to copy of Grikka */
 DELETE FROM `npc_trainer` WHERE `ID` = @Grikka;

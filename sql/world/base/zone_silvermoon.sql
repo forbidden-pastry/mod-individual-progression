@@ -5,7 +5,7 @@ INSERT INTO `npc_trainer` (`ID`, `SpellID`) VALUES (16662, -350000);
 /* Restore Blood Knight quests to pre-2.4 state */
 SET @MURU_GUID := 352043;
 DELETE FROM `creature` WHERE `guid` = @MURU_GUID;
-INSERT INTO `creature` (`guid`, `id1`, `map`, `position_x`, `position_y`, `position_z`, `orientation`) VALUES
+INSERT INTO `creature` (`guid`, `id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`) VALUES
 (@MURU_GUID, 17544, 530, 9850.99, -7522.666, -9.157837, 1.537163);
 
 UPDATE `creature_template` SET `rank` = 3, `type_flags` = 4 WHERE `entry` = 17544;

@@ -29,9 +29,9 @@ UPDATE `creature` SET `spawnMask` = 3 WHERE `spawnMask` = 7 AND `map` = 533;
 -- Update spawnMask of all gameobjects to all
 UPDATE `gameobject` SET `spawnMask` = 7 WHERE `spawnMask` = 3 AND `map` = 533;
 -- Lich King uses same entry in Naxx WotLK and Naxx40 - Allow spawning in all versions
-UPDATE `creature` SET `spawnMask` = `spawnMask` | 4 WHERE `id1` = 16980;
+UPDATE `creature` SET `spawnMask` = `spawnMask` | 4 WHERE `id` = 16980;
 -- Naxxramas Trigger (frogger) should also spawn in Naxx40
-UPDATE `creature` SET `spawnMask` = `spawnMask`| 4 WHERE `id1` = 16082;
+UPDATE `creature` SET `spawnMask` = `spawnMask`| 4 WHERE `id` = 16082;
 -- Orb of Naxxramas does not exist in classic
 UPDATE `gameobject` SET `spawnMask` = 3 WHERE `id` IN (202278, 202277);
 

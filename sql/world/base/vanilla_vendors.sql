@@ -4106,10 +4106,10 @@ INSERT INTO `creature_template_locale` (`entry`, `locale`, `Name`, `Title`, `Ver
 DELETE FROM `creature_template_model` WHERE `CreatureID` = @Kelm;
 INSERT INTO `creature_template_model` (`CreatureID`, `Idx`, `CreatureDisplayID`, `DisplayScale`, `Probability`, `VerifiedBuild`) VALUES (@Kelm, 0, 14785, 1, 1, 12340);
 
-DELETE FROM `creature` WHERE `id1` = @Kelm;
-INSERT INTO `creature` (`guid`, `id1`, `id2`, `id3`, `map`, `zoneId`, `areaId`, `spawnMask`, `phaseMask`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, 
+DELETE FROM `creature` WHERE `id` = @Kelm;
+INSERT INTO `creature` (`guid`, `id`, `map`, `zoneId`, `areaId`, `spawnMask`, `phaseMask`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, 
 `spawntimesecs`, `wander_distance`, `currentwaypoint`, `curhealth`, `curmana`, `MovementType`, `npcflag`, `unit_flags`, `dynamicflags`, `ScriptName`, `VerifiedBuild`, `CreateObject`, `Comment`) VALUES
-(614754, @Kelm, 0, 0, 1, 0, 0, 1, 1, 1, 1046.54, -2104.31, 123.065, 3.94444, 600, 0, 0, 52280, 0, 0, 0, 4226, 0, '', 0, 0, NULL);
+(614754, @Kelm, 1, 0, 0, 1, 1, 1, 1046.54, -2104.31, 123.065, 3.94444, 600, 0, 0, 52280, 0, 0, 0, 4226, 0, '', 0, 0, NULL);
 
 DELETE FROM `creature_equip_template` WHERE `CreatureID` = @Kelm;
 INSERT INTO `creature_equip_template` (`CreatureID`, `ID`, `ItemID1`, `ItemID2`, `ItemID3`, `VerifiedBuild`) VALUES (@Kelm, 1, 14870, 0, 0, 18019);
@@ -4135,7 +4135,7 @@ INSERT INTO `npc_vendor` (`entry`, `item`, `ExtendedCost`) VALUES
 (@Kelm, 21566, 1055), (@Kelm, 21567, 1054), (@Kelm, 21568, 1055), (@Kelm, 22651, 748), (@Kelm, 22673, 748), (@Kelm, 22676, 748), (@Kelm, 22740, 748), (@Kelm, 22741, 748), (@Kelm, 22747, 748);
 
 /* Disable the spawn of the original Kelm */
-UPDATE `creature` SET `spawnMask` = 0 WHERE `id1` = 14754;
+UPDATE `creature` SET `spawnMask` = 0 WHERE `id` = 14754;
 
 /* Link related quests to clone of Kelm */
 UPDATE `creature_queststarter` SET `id` = @Kelm WHERE `quest` IN (7866, 7867, 7868);

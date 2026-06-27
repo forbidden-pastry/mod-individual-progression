@@ -124,67 +124,67 @@ INSERT INTO `conditions` (`SourceTypeOrReferenceId`, `SourceGroup`, `SourceEntry
 
 
 -- Thelman Slatefist <Alterac Valley Battlemaster>
-DELETE FROM `creature` WHERE `id1`=7410;
-INSERT INTO `creature` (`id1`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`) VALUES (7410, 0, -8424.43, 342.967, 120.886, 3.82018, 300);
+DELETE FROM `creature` WHERE `id`=7410;
+INSERT INTO `creature` (`id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`) VALUES (7410, 0, -8424.43, 342.967, 120.886, 3.82018, 300);
 
 -- Hank the Hammer <The Mitrhil Order>
-DELETE FROM `creature` WHERE `id1`=7798;
-INSERT INTO `creature` (`id1`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`) VALUES (7798, 0, -8422.17, 630.877, 95.8402, 5.044, 430);
+DELETE FROM `creature` WHERE `id`=7798;
+INSERT INTO `creature` (`id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`) VALUES (7798, 0, -8422.17, 630.877, 95.8402, 5.044, 430);
 
 -- Lieutenant Karter <War Mount Quartermaster>
-DELETE FROM `creature` WHERE `id1`=12783;
-INSERT INTO `creature` (`id1`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`) VALUES (12783, 0, -8779.7, 432.158, 105.233, 5.36374, 300);
+DELETE FROM `creature` WHERE `id`=12783;
+INSERT INTO `creature` (`id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`) VALUES (12783, 0, -8779.7, 432.158, 105.233, 5.36374, 300);
 
 -- Captain Dirgehammer <Armor Quartermaster>
-DELETE FROM `creature` WHERE `id1`=12777;
-DELETE FROM `creature` WHERE `id1`=34075;
-INSERT INTO `creature` (`id1`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`) VALUES (12777, 0, -8768.77, 401.647, 109.665, 2.22999, 300);
+DELETE FROM `creature` WHERE `id`=12777;
+DELETE FROM `creature` WHERE `id`=34075;
+INSERT INTO `creature` (`id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`) VALUES (12777, 0, -8768.77, 401.647, 109.665, 2.22999, 300);
 
 -- Lieutenant Rachel Vaccar <Outland Armor Quartermaster>
-DELETE FROM `creature` WHERE `id1`=12778;
-INSERT INTO `creature` (`id1`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`) VALUES (12778, 0, -8783.7, 423.749, 105.276, 0.651345, 300);
+DELETE FROM `creature` WHERE `id`=12778;
+INSERT INTO `creature` (`id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`) VALUES (12778, 0, -8783.7, 423.749, 105.276, 0.651345, 300);
 
 -- Archmage Gaiman
-DELETE FROM `creature` WHERE `id1`=12779;
-INSERT INTO `creature` (`id1`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`) VALUES (12779, 0, -8783.33, 426.686, 105.276, 5.37159, 300);
+DELETE FROM `creature` WHERE `id`=12779;
+INSERT INTO `creature` (`id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`) VALUES (12779, 0, -8783.33, 426.686, 105.276, 5.37159, 300);
 
 -- Sergeant Major Skyshadow
-DELETE FROM `creature` WHERE `id1`=12780;
-INSERT INTO `creature` (`id1`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`) VALUES (12780, 0, -8779.46, 427.206, 105.275, 3.80473, 300);
+DELETE FROM `creature` WHERE `id`=12780;
+INSERT INTO `creature` (`id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`) VALUES (12780, 0, -8779.46, 427.206, 105.275, 3.80473, 300);
 
 -- Master Sergeant Biggins <Accessories Quartermaster>
-DELETE FROM `creature` WHERE `id1`=12781;
-INSERT INTO `creature` (`id1`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`) VALUES (12781, 0, -8777.4, 417.124, 103.921, 6.23553, 300);
+DELETE FROM `creature` WHERE `id`=12781;
+INSERT INTO `creature` (`id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`) VALUES (12781, 0, -8777.4, 417.124, 103.921, 6.23553, 300);
 
 -- Captain O'Neal <Weapons Quartermaster>
-DELETE FROM `creature` WHERE `id1`=12782;
-DELETE FROM `creature` WHERE `id1`=34081;
-INSERT INTO `creature` (`id1`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`) VALUES (12782, 0, -8778.3, 432.142, 105.309, 4.17386, 300);
+DELETE FROM `creature` WHERE `id`=12782;
+DELETE FROM `creature` WHERE `id`=34081;
+INSERT INTO `creature` (`id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`) VALUES (12782, 0, -8778.3, 432.142, 105.309, 4.17386, 300);
 
 -- Lieutenant Jackspring <Legacy Weapon Quartermaster>
-DELETE FROM `creature` WHERE `id1`=12784;
+DELETE FROM `creature` WHERE `id`=12784;
 
 -- Knight-Lieutenant T'Maire Sydes <Northrend Armor Quartermaster>
-DELETE FROM `creature` WHERE `id1`=40607;
+DELETE FROM `creature` WHERE `id`=40607;
 
 -- Lieutenant Tristia <Veteran Armor Quartermaster>
-DELETE FROM `creature` WHERE `id1`=34078;
+DELETE FROM `creature` WHERE `id`=34078;
 
 -- Sergeant Major Clate <Legacy Armor Quartermaster>
-DELETE FROM `creature` WHERE `id1`=12785;
-INSERT INTO `creature` (`id1`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`) VALUES (12785, 0, -8771.31, 401.973, 109.665, 0.659191, 300);
+DELETE FROM `creature` WHERE `id`=12785;
+INSERT INTO `creature` (`id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`) VALUES (12785, 0, -8771.31, 401.973, 109.665, 0.659191, 300);
 
 -- Officer Areyn <Accessories Quartermaster>
-DELETE FROM `creature` WHERE `id1`=12805;
-INSERT INTO `creature` (`id1`, `map`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`) VALUES (12805, 0, 1, -8759.18, 389.112, 101.056, 0.648394, 430);
+DELETE FROM `creature` WHERE `id`=12805;
+INSERT INTO `creature` (`id`, `map`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`) VALUES (12805, 0, 1, -8759.18, 389.112, 101.056, 0.648394, 430);
 
 -- Elfarran <Warsong Gulch Battlemaster>
-DELETE FROM `creature` WHERE `id1`=14981;
-INSERT INTO `creature` (`id1`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`) VALUES (14981, 0, -8454.62, 318.853, 120.969, 0.698132, 180);
+DELETE FROM `creature` WHERE `id`=14981;
+INSERT INTO `creature` (`id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`) VALUES (14981, 0, -8454.62, 318.853, 120.969, 0.698132, 180);
 
 -- Lady Hoteshem <Arathi Basin Battlemaster>
-DELETE FROM `creature` WHERE `id1`=15008;
-INSERT INTO `creature` (`id1`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`) VALUES (15008, 0, -8420.48, 328.711, 120.886, 3.06638, 180);
+DELETE FROM `creature` WHERE `id`=15008;
+INSERT INTO `creature` (`id`, `map`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`) VALUES (15008, 0, -8420.48, 328.711, 120.886, 3.06638, 180);
 
 -- Tome of Nobility (Paladin)
 DELETE FROM `creature_questender` WHERE `id`=6171 AND `quest`=1661;
